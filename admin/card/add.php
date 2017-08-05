@@ -17,3 +17,6 @@ file_put_contents("../../misc/info.json", $jsonData);
 
 // tell the user we're done
 echo "SUCCESS";
+
+// and die
+die();
