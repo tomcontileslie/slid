@@ -1,0 +1,67 @@
+[
+  {
+    "colour": "blue",
+    "brightness": "lighten-2",
+    "tags": [
+      "support",
+      "university"
+    ],
+    "title": {
+      "colour": "teal-text",
+      "brightness": "darken-5",
+      "text": "Out of Hours"
+    },
+    "content": {
+      "colour": "teal-text",
+      "brightness": "darken-4",
+      "text": "Urgent support after university office hours."
+    },
+    "action": {
+      "colour": "teal-text",
+      "brightness": "lighten-3",
+      "urls": [
+        {
+          "url": "tel:+441334476161",
+          "text": "(01334 47) 6161"
+        },
+        {
+          "url": "https://www.st-andrews.ac.uk/contacts/emergency/university/outofhours/",
+          "text": "More information"
+        }
+      ]
+    }
+  },
+  {
+    "colour": "blue",
+    "brightness": "lighten-2",
+    "tags": [
+      "support",
+      "university",
+      "advice"
+    ],
+    "title": {
+      "colour": "teal-text",
+      "brightness": "darken-5",
+      "text": "The ASC"
+    },
+    "content": {
+      "colour": "teal-text",
+      "brightness": "darken-4",
+      "text": "Help and advice on a whole range of university topics."
+    },
+    "action": {
+      "colour": "teal-text",
+      "brightness": "lighten-3",
+      "urls": [
+        {
+          "url": "tel:+441334472266",
+          "text": "(01334 47) 2266"
+        },
+        {
+          "url": "https://www.st-andrews.ac.uk/administration/asc/",
+          "text": "More information"
+        }
+      ]
+    }
+  }
+]
