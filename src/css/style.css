@@ -1,0 +1,9 @@
+.nav {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.card {
+    display: inline-block;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
