@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css" integrity="sha256-oiVjjd5Fuot9f/fgwH5IBBjsOA7TDdcfSK5I2EZ0zMw=" crossorigin="" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
 
     <!-- SCRIPTS !-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=""></script>
@@ -16,10 +16,10 @@
       var USING_PHP = "<?php echo "TRUE" ?>" === "TRUE";
       var FS_ACCESS = "<?php echo (is_writable("../misc/info.json") ? "TRUE" : "") ?>" === "TRUE";
     </script>
-    <script src="../js/common.js" type="text/javascript"></script>
-    <script src="../js/vanilla-modifier.js" type="text/javascript"></script>
-    <script src="../js/admin.js" type="text/javascript"></script>
-    <script src="../js/card-compiled.js" type="text/javascript"></script>
+    <script src="../../js/common.js" type="text/javascript"></script>
+    <script src="../../js/vanilla-modifier.js" type="text/javascript"></script>
+    <script src="../../js/admin.js" type="text/javascript"></script>
+    <script src="../../js/card-compiled.js" type="text/javascript"></script>
 
     <!-- MISC !-->
     <meta charset="UTF-8">
@@ -33,13 +33,13 @@
       <div class="nav-wrapper valign-wrapper cyan">
         <a href="#" class="brand-logo center">lid admin</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="../index.html" title="Home">Home</a></li>
+          <li><a href="../../index.html" title="Home">Home</a></li>
           <li><a href="https://github.com/Kezz101/lid/issues" title="Bugs">Bugs</a></li>
           <li><a href="https://github.com/Kezz101/lid" title="Source">Source</a></li>
         </ul>
         <a href="#" data-activates="side-nav" class="button-collapse left"><i class="material-icons">menu</i></a>
         <ul id="side-nav" class="side-nav">
-          <li><a href="../index.html"><i class="material-icons left">home</i>Home</a></li>
+          <li><a href="../../index.html"><i class="material-icons left">home</i>Home</a></li>
           <li><a href="https://github.com/Kezz101/lid/issues"><i class="material-icons left">bug_report</i>Bugs</a></li>
           <li><a href="https://github.com/Kezz101/lid"><i class="material-icons left">code</i>Source</a></li>
         </ul>
