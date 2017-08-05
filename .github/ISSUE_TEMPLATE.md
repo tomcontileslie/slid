@@ -26,6 +26,7 @@
 
 ## Your Environment
 <!--- Include as many relevant details about the environment you experienced the bug in -->
+<!--- To save time, just grab your info from http://www.whatsmybrowser.org/ -->
 * Version used:
 * Browser Name and version:
 * Operating System and version (desktop or mobile):
