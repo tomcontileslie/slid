@@ -58,7 +58,7 @@ function addCardSubmit() {
   }
   // skip vanilla modification if using php
   if (USING_PHP) {
-    $.post("../admin-php/card/add.php", {data: JSON.stringify(data)}).done(function (data) {
+    $.post("../admin/card/add.php", {data: JSON.stringify(data)}).done(function (data) {
       if (data === "SUCCESS") {
         Materialize.toast("Updated info database successfully.", 4000);
       } else {
