@@ -35,9 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <script type="text/javascript">
       var USING_PHP = "<?php echo "TRUE" ?>" === "TRUE";
 
-      //if (!USING_PHP) {
-      //  window.location.replace("index.php");
-      //}
+      if (!USING_PHP) {
+        window.location.replace("index.php");
+      }
 
       $(document).ready(function() {
         if (getParameterByName("failed") !== null) {
