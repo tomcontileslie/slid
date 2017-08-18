@@ -1,14 +1,8 @@
-<?php
+<?php session_start();
 
-include "../utils.php";
+include "utils.php";
 
-// check if we've got a session going
-if (session_id() == "") {
-    session_start();
-}
-
-// check if they're logged in
-if (isset($_SESSION["USERNAME"])) {
+if (is_logged_in()) {
     // check last session time
     if (isset($_SESSION["LAST_ACTIVITY"]) && (time() - $_SESSION["LAST_ACTIVITY"] > 1800)) {
         // last request was more than 30 minutes ago so destroy the session
@@ -16,7 +10,7 @@ if (isset($_SESSION["USERNAME"])) {
         session_destroy();
 
         // now redirect
-        redirect("index.php?timeout=1");
+        redirect("login.php?timeout=1");
     }
 
     // check session creation time
@@ -31,8 +25,6 @@ if (isset($_SESSION["USERNAME"])) {
     // update last activity time stamp
     $_SESSION["LAST_ACTIVITY"] = time();
 } else {
-    // they're not logged in so send them to go do that
-    redirect("index.php");
+    // they"re not logged in so send them to go do that
+    redirect("login.php");
 }
-
-die();

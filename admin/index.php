@@ -1,3 +1,4 @@
+<?php session_start(); include "session.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,12 +37,14 @@
           <li><a href="../index.html" title="Home">Home</a></li>
           <li><a href="https://github.com/Kezz101/lid/issues" title="Bugs">Bugs</a></li>
           <li><a href="https://github.com/Kezz101/lid" title="Source">Source</a></li>
+          <li><a href="logout.php" title="Log out" target="_self">Log out</a></li>
         </ul>
         <a href="#" data-activates="side-nav" class="button-collapse left"><i class="material-icons">menu</i></a>
         <ul id="side-nav" class="side-nav">
           <li><a href="../index.html"><i class="material-icons left">home</i>Home</a></li>
           <li><a href="https://github.com/Kezz101/lid/issues"><i class="material-icons left">bug_report</i>Bugs</a></li>
           <li><a href="https://github.com/Kezz101/lid"><i class="material-icons left">code</i>Source</a></li>
+          <li><a href="logout.php" title="Log out" target="_self"><i class="material-icons left">lock_open</i>Log out</a></li>
         </ul>
       </div>
     </nav>
