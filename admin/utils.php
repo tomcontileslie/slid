@@ -50,3 +50,14 @@ function login_as($username) {
     // todo we really should check for username validity at least
     $_SESSION["USERNAME"] = $username;
 }
+
+/**
+ * Opens the specified file, performs a backup and returns the contents of the file
+ * @param string $filename the file to open, defaults to info.json
+ * @return bool|string returns the read data or false on failure
+ */
+function get_with_backup($filename = "../../misc/info.json") {
+    $inp = file_get_contents($filename);
+    file_put_contents($filename . ".backup", $inp);
+    return $inp;
+}
