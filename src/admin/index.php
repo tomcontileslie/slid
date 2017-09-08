@@ -81,9 +81,15 @@
         </div>
         <div class="divider"></div>
         <div id="add" class="section scrollspy">
-          <h4>Add Card</h4>
+          <h4>Add/Modify Card</h4>
           <div class="row">
             <form id="add-form" class="col s12 m12 l6" action="javascript:void(0);" onsubmit="return addCardSubmit();">
+              <div class="input-field col s12">
+                <select id="add-load" disabled>
+                  <option disabled>Loading cards...</option>
+                </select>
+                <label for="add-load">Load existing card</label>
+              </div>
               <div class="input-field col s6">
                 <select id="add-colour" class="icons select-colour" data-brightness="add-brightness">
                   <option value="" selected>Transparent</option>
@@ -305,7 +311,7 @@
       <div class="col hide-on-small-only m3 l2">
         <ul class="section table-of-contents">
           <li><a href="#status">Status</a></li>
-          <li><a href="#add">Add Card</a></li>
+          <li><a href="#add">Add/Modify Card</a></li>
         </ul>
       </div>
     </div>

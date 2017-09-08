@@ -72,7 +72,7 @@ $(document).ready(function () {
   });
   $(".close").click(function() {
     addForm.trigger("change");
-  })
+  });
 
   // card wysiwyg preview
   var addPreview = $("#add-preview");
@@ -173,4 +173,7 @@ $(document).ready(function () {
     });
     brightness.material_select();
   }).change();
+
+  // load card list
+
 });
