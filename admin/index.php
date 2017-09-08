@@ -81,14 +81,17 @@
         </div>
         <div class="divider"></div>
         <div id="add" class="section scrollspy">
-          <h4>Add/Modify Card</h4>
+          <h4>Add/Edit Card</h4>
           <div class="row">
             <form id="add-form" class="col s12 m12 l6" action="javascript:void(0);" onsubmit="return addCardSubmit();">
-              <div class="input-field col s12">
-                <select id="add-load" disabled>
+              <div class="input-field col s9">
+                <select id="add-load">
                   <option disabled>Loading cards...</option>
                 </select>
                 <label for="add-load">Load existing card</label>
+              </div>
+              <div class="input-field col s3">
+                <a id="add-load-btn" class="btn cyan darken-2 disabled">Load</a>
               </div>
               <div class="input-field col s6">
                 <select id="add-colour" class="icons select-colour" data-brightness="add-brightness">
@@ -196,7 +199,7 @@
                 <label for="add-title-brightness">Title text brightness</label>
               </div>
               <div class="input-field col s6">
-                <input id="add-title" type="text">
+                <input id="add-title" type="text" autocomplete="off">
                 <label for="add-title">Title</label>
               </div>
               <div class="col s3">
@@ -219,7 +222,7 @@
               </div>
               <div class="row" style="margin-bottom: 0 !important;"></div>
               <div class="img-hide input-field col s12" style="display: none;">
-                <input id="add-img" type="url">
+                <input id="add-img" type="url" autocomplete="off">
                 <label for="add-img">Image URL</label>
               </div>
               <div class="input-field col s6">
@@ -278,23 +281,23 @@
               </div>
               <div id="add-chips" class="col s12"></div>
               <div class="col s5 input-field">
-                <input id="add-chip-title" type="text">
+                <input id="add-chip-title" type="text" autocomplete="off">
                 <label for="add-chip-title">Action title</label>
               </div>
               <div class="col s5 input-field">
-                <input id="add-chip-url" type="text">
+                <input id="add-chip-url" type="text" autocomplete="off">
                 <label for="add-chip-url">Action URL</label>
               </div>
-              <div class="col s2 " style="padding-top: 7px;">
+              <div class="col s2" style="padding-top: 7px;">
                 <a id="add-chip" class="waves-effect waves-light btn cyan darken-2 disabled">Add</a>
               </div>
               <div id="add-adv-hide" style="display: none;">
                 <div class="input-field col s12">
-                  <input id="add-style" type="text">
+                  <input id="add-style" type="text" autocomplete="off">
                   <label for="add-style">Card CSS</label>
                 </div>
                 <div class="input-field col s12 img-hide" style="display: none;">
-                  <input id="add-img-style" type="text">
+                  <input id="add-img-style" type="text" autocomplete="off">
                   <label for="add-img-style">Image CSS</label>
                 </div>
               </div>
@@ -307,11 +310,26 @@
             </div>
           </div>
         </div>
+        <div class="divider"></div>
+        <div id="delete" class="section scrollspy">
+          <h4>Delete Card</h4>
+          <div class="row">
+            <form method="post" action="card/delete.php">
+              <div class="input-field col s12 m9 l10">
+                <select id="delete-name" disabled>
+                  <option disabled>Loading cards...</option>
+                </select>
+                <label for="delete-name">Select a card</label>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
       <div class="col hide-on-small-only m3 l2">
         <ul class="section table-of-contents">
           <li><a href="#status">Status</a></li>
-          <li><a href="#add">Add/Modify Card</a></li>
+          <li><a href="#add">Add/Edit card</a></li>
+          <li><a href="#delete">Delete card</a></li>
         </ul>
       </div>
     </div>

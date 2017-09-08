@@ -1,6 +1,9 @@
 /*jslint browser: true*/
 /*global $, Handlebars, console*/
 
+var info = null;
+var cards = {};
+
 $(document).ready(function () {
   // plugin time
   $(".scrollspy").scrollSpy();
@@ -175,5 +178,58 @@ $(document).ready(function () {
   }).change();
 
   // load card list
+  var addLoad = document.getElementById("add-load");
+  var jqAddLoad = $(addLoad);
+  var addLoadBtn = $("#add-load-btn");
 
+  $.getJSON("../misc/info.json", function (json) {
+    info = json;
+    addLoad.options.length = 0;
+    addLoad.disabled = false;
+    json.forEach(function (obj) {
+      cards[obj.id] = obj;
+      addOptionToSelect(addLoad, obj.title.text, obj.id);
+      jqAddLoad.material_select();
+    });
+    addLoadBtn.removeClass("disabled");
+  });
+
+  // load existing click
+  addLoadBtn.click(function () {
+    // get the data they want
+    var data = cards[jqAddLoad.val()];
+
+    // now hack it back into the form
+    if (typeof data.title !== 'undefined') {
+      $("#add-title-colour").val(undefinedToEmpty(data.title.colour)).change();
+      $("#add-title-brightness").val(undefinedToEmpty(data.title.brightness)).change();
+      addTitle.val(undefinedToEmpty(data.title.text)).change();
+    }
+    if (typeof data.image !== 'undefined') {
+      $("#add-img-style").val(undefinedToEmpty(data.image.style)).change();
+      $("#add-img").val(undefinedToEmpty(data.image.src)).change();
+    }
+    addColour.val(undefinedToEmpty(data.colour)).change();
+    brightnessAccent.val(undefinedToEmpty(data.brightness)).change();
+    $("#add-style").val(undefinedToEmpty(data.style)).change();
+    if (typeof data.content !== 'undefined') {
+      $("#add-desc").val(undefinedToEmpty(data.content.text)).change();
+      $("#add-desc-colour").val(undefinedToEmpty(data.content.colour)).change();
+      $("#add-desc-brightness").val(undefinedToEmpty(data.colour.brightness)).change();
+    }
+    if (typeof data.actions !== 'undefined') {
+      data.actions.urls.forEach(function (obj) {
+        $("#add-chips").append("<div class='chip' data-url='" +
+          obj.url + "' data-title='" + obj.text +
+          "'>" + "<i class='close material-icons'>close</i>" +
+          obj.text + "</div>");
+      });
+    }
+
+    // and finally make sure they know they're editing
+    addForm.data("edit-id", data.id);
+    addForm.trigger("change");
+    $("#add-submit").html("Edit Card");
+    addPreview.html(Handlebars.templates.card(data));
+  });
 });
