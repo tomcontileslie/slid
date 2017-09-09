@@ -19,6 +19,9 @@ if (is_logged_in()) {
         $i++;
     }
 
+    // rebase the mother fucking array, see https://goo.gl/LKXDYg
+    $tempArray = array_values($tempArray);
+
     // push and save new array
     $jsonData = json_encode($tempArray, JSON_UNESCAPED_SLASHES);
 
