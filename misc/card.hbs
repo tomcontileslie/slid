@@ -1,5 +1,5 @@
 <div class="card{{#if colour}} {{colour}}{{/if}}{{#if brightness}} {{brightness}}{{/if}}{{#each tags}} {{this}}{{/each}}"
-     style="{{#if size}}{{#with size}}width: {{width}}; height: {{height}}{{/with}}{{/if}} {{#if style}}{{style}}{{/if}}">
+     style="{{#if size}}{{#with size}}width: {{width}}; height: {{height}};{{/with}}{{/if}} {{#if style}}{{style}}{{/if}}">
   {{#if image}}
     <div class="card-image">
       {{#with image}}<img src="{{src}}"{{#if style}} style="{{style}}"{{/if}}>{{/with}}

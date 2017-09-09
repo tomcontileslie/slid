@@ -29,8 +29,8 @@ function addCardSubmit() {
 
   if (addWidth.val() || addHeight.val()) {
     data.size = {
-      width: addWidth.val() ? addWidth.val() : "auto",
-      height: addHeight.val() ? addHeight.val() : "auto"
+      width: addWidth.val() ? addWidth.val() + "px" : "auto",
+      height: addHeight.val() ? addHeight.val() + "px" : "auto"
     };
   }
 
