@@ -21,14 +21,12 @@ $(document).ready(function () {
       sortBy: "name"
     });
 
-    // layout Isotope after each image loads
-    grid.imagesLoaded().progress(function() {
-      grid.isotope("layout");
-    });
-
     json.forEach(function (obj) {
       var data = $(Handlebars.templates.card(obj));
       grid.append(data).isotope("appended", data).isotope("updateSortData").isotope();
+      grid.imagesLoaded().progress(function() {
+        grid.isotope("updateSortData").isotope();
+      });
     });
   });
 
