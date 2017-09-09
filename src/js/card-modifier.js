@@ -9,6 +9,8 @@ function addCardSubmit() {
   var addColour = $("#add-colour");
   var brightnessAccent = $("#add-brightness");
   var addChips = $("#add-chips");
+  var addWidth = $("#add-width");
+  var addHeight = $("#add-height");
   var data = {};
   var successful = true;
   var editing = addForm.data("edit-id") !== undefined;
@@ -22,6 +24,13 @@ function addCardSubmit() {
       colour: $("#add-title-colour").val(),
       brightness: $("#add-title-brightness").val(),
       text: addTitle.val()
+    };
+  }
+
+  if (addWidth.val() || addHeight.val()) {
+    data.size = {
+      width: addWidth.val() ? addWidth.val() : "auto",
+      height: addHeight.val() ? addHeight.val() : "auto"
     };
   }
 
