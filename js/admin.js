@@ -243,9 +243,9 @@ function updateDynamicNameLists() {
     deleteSelect.disabled = false;
     json.forEach(function (obj) {
       cards[obj.id] = obj;
-      addOptionToSelect(addLoad, obj.title.text, obj.id);
+      addOptionToSelect(addLoad, obj.title ? obj.title.text : obj.id, obj.id);
       jqAddLoad.material_select();
-      addOptionToSelect(deleteSelect, obj.title.text, obj.id);
+      addOptionToSelect(deleteSelect, obj.title ? obj.title.text : obj.id, obj.id);
       jqDeleteSelect.material_select();
     });
     $("#delete-submit").removeClass("disabled");
