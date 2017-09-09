@@ -146,3 +146,37 @@ function editCardSubmit(data) {
 
   return successful;
 }
+
+function deleteCardSubmit() {
+  var id = $("#delete-name").val();
+
+  // skip vanilla modification if using php
+  if (USING_PHP) {
+    $.post("../admin/card/delete.php", {id: id}).done(function (data) {
+      if (data === "SUCCESS") {
+        Materialize.toast("Removed card from info database successfully.", 4000);
+      } else {
+        console.log(data);
+        Materialize.toast("Failed to remove card from the info database!", 4000);
+      }
+    }).fail(function () {
+      Materialize.toast("Failed to remove card from the info database!", 4000);
+    }).always(function() {
+      updateDynamicNameLists();
+    });
+  } else {
+    // edit the existing data
+    $.getJSON("../misc/info.json", function (json) {
+      findAndRemove(json, "id", id);
+
+      downloadFile("text/json", "info.json", JSON.stringify(json));
+
+      // alert the user
+      Materialize.toast("Modified info database downloaded successfully.", 4000);
+
+      updateDynamicNameLists();
+    });
+  }
+
+  return false;
+}

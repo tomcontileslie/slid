@@ -31,12 +31,12 @@ function getParameterByName(name, url) {
 
 /**
  * Adds an option to a select dropdown
- * @param {HTMLSelectElement} select the select element
+ * @param {Element} select the select element
  * @param {string} key the text to be displayed in the option
  * @param value the value when submitted or 'key' if omitted
  */
 function addOptionToSelect(select, key, value) {
-  if (value == null) {
+  if (value === null) {
     value = key;
   }
 
@@ -60,4 +60,19 @@ function uuidv4(a) {
  */
 function undefinedToEmpty(val) {
   return val === undefined ? "" : val;
+}
+
+/**
+ * Finds and removes an array object based on a property value
+ * @author https://stackoverflow.com/a/6310763/1590990
+ * @param {object} array the array
+ * @param {string} property the name of the property
+ * @param {string} value the desired value of the property
+ */
+function findAndRemove(array, property, value) {
+  array.forEach(function (result, index) {
+    if (result[property] === value) {
+      array.splice(index, 1);
+    }
+  });
 }

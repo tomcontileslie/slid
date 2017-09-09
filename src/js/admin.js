@@ -177,25 +177,10 @@ $(document).ready(function () {
     brightness.material_select();
   }).change();
 
-  // load card list
-  var addLoad = document.getElementById("add-load");
-  var jqAddLoad = $(addLoad);
-  var addLoadBtn = $("#add-load-btn");
-
-  $.getJSON("../misc/info.json", function (json) {
-    info = json;
-    addLoad.options.length = 0;
-    addLoad.disabled = false;
-    json.forEach(function (obj) {
-      cards[obj.id] = obj;
-      addOptionToSelect(addLoad, obj.title.text, obj.id);
-      jqAddLoad.material_select();
-    });
-    addLoadBtn.removeClass("disabled");
-  });
+  updateDynamicNameLists();
 
   // load existing click
-  addLoadBtn.click(function () {
+  $("#add-load-btn").click(function () {
     // get the data they want
     var data = cards[jqAddLoad.val()];
 
@@ -233,3 +218,28 @@ $(document).ready(function () {
     addPreview.html(Handlebars.templates.card(data));
   });
 });
+
+function updateDynamicNameLists() {
+  // load card list
+  var addLoad = document.getElementById("add-load");
+  var jqAddLoad = $(addLoad);
+  var deleteSelect = document.getElementById("delete-name");
+  var jqDeleteSelect = $(deleteSelect);
+
+  $.getJSON("../misc/info.json", function (json) {
+    info = json;
+    addLoad.options.length = 0;
+    addLoad.disabled = false;
+    deleteSelect.options.length = 0;
+    deleteSelect.disabled = false;
+    json.forEach(function (obj) {
+      cards[obj.id] = obj;
+      addOptionToSelect(addLoad, obj.title.text, obj.id);
+      jqAddLoad.material_select();
+      addOptionToSelect(deleteSelect, obj.title.text, obj.id);
+      jqDeleteSelect.material_select();
+    });
+    $("#delete-submit").removeClass("disabled");
+    $("#add-load-btn").removeClass("disabled");
+  });
+}
