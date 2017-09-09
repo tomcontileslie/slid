@@ -8,13 +8,14 @@ $(document).ready(function () {
   $.getJSON("misc/info.json", function (json) {
     grid.empty();
 
-    $.each(json, function (index, obj) {
-      grid.append(Handlebars.templates.card(obj))
+    grid.isotope({
+      itemSelector: ".card",
+      layoutMode: "packery"
     });
 
-    grid.isotope({
-      itemSelector: "card",
-      stagger: 30
+    json.forEach(function (obj) {
+      var data = $(Handlebars.templates.card(obj));
+      grid.append(data).isotope("appended", data);
     });
   });
 
