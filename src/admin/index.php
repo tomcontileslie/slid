@@ -293,11 +293,11 @@
               </div>
               <div id="add-adv-hide" style="display: none;">
                 <div class="input-field col s6">
-                  <input id="add-width" type="number" autocomplete="off">
+                  <input id="add-width" type="number" autocomplete="off" min="0">
                   <label for="add-width">Card width</label>
                 </div>
                 <div class="input-field col s6">
-                  <input id="add-height" type="number" autocomplete="off">
+                  <input id="add-height" type="number" autocomplete="off" min="0">
                   <label for="add-height">Card height</label>
                 </div>
                 <div class="input-field col s12">

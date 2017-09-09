@@ -99,8 +99,8 @@ $(document).ready(function () {
 
     if (addWidth.val() || addHeight.val()) {
       data.size = {
-        width: addWidth.val() ? addWidth.val() : "auto",
-        height: addHeight.val() ? addHeight.val() : "auto"
+        width: addWidth.val() ? addWidth.val() + "px" : "auto",
+        height: addHeight.val() ? addHeight.val() + "px" : "auto"
       };
     }
 
@@ -202,6 +202,10 @@ $(document).ready(function () {
     if (typeof data.image !== 'undefined') {
       $("#add-img-style").val(undefinedToEmpty(data.image.style)).change();
       $("#add-img").val(undefinedToEmpty(data.image.src)).change();
+    }
+    if (typeof data.size !== 'undefined') {
+      $("#add-width").val(data.size.width === "auto" ? "" : data.size.width.replace("px", ""));
+      $("#add-height").val(data.size.height === "auto" ? "" : data.size.height.replace("px", ""));
     }
     addColour.val(undefinedToEmpty(data.colour)).change();
     brightnessAccent.val(undefinedToEmpty(data.brightness)).change();
