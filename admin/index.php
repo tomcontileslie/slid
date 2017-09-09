@@ -314,12 +314,17 @@
         <div id="delete" class="section scrollspy">
           <h4>Delete Card</h4>
           <div class="row">
-            <form method="post" action="card/delete.php">
-              <div class="input-field col s12 m9 l10">
+            <form method="post" class="col s12" action="javascript:void(0);" onsubmit="return deleteCardSubmit();">
+              <div class="input-field col s9">
                 <select id="delete-name" disabled>
                   <option disabled>Loading cards...</option>
                 </select>
                 <label for="delete-name">Select a card</label>
+              </div>
+              <div class="input-field col s3">
+                <button type="submit" id="delete-submit" class="btn waves-effect waves-light cyan darken-2 disabled">
+                  Delete card
+                </button>
               </div>
             </form>
           </div>
