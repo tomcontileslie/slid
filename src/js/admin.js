@@ -191,7 +191,7 @@ $(document).ready(function () {
   // load existing click
   $("#add-load-btn").click(function () {
     // get the data they want
-    var data = cards[jqAddLoad.val()];
+    var data = cards[$("#add-load").val()];
 
     // now hack it back into the form
     if (typeof data.title !== 'undefined') {
