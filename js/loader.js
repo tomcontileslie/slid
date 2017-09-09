@@ -14,7 +14,11 @@ $(document).ready(function () {
       layoutMode: "packery",
       filter: function() {
         return qsRegex ? $(this).text().match( qsRegex ) : true;
-      }
+      },
+      getSortData: {
+        name: "[data-name]"
+      },
+      sortBy: "name"
     });
 
     // layout Isotope after each image loads
@@ -24,7 +28,7 @@ $(document).ready(function () {
 
     json.forEach(function (obj) {
       var data = $(Handlebars.templates.card(obj));
-      grid.append(data).isotope("appended", data);
+      grid.append(data).isotope("appended", data).isotope("updateSortData").isotope();
     });
   });
 
