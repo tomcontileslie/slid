@@ -3,6 +3,7 @@
 
 $(document).ready(function () {
   var grid = $(".grid");
+  var qsRegex;
 
   // load isotope
   $.getJSON("misc/info.json", function (json) {
@@ -10,7 +11,10 @@ $(document).ready(function () {
 
     grid.isotope({
       itemSelector: ".card",
-      layoutMode: "packery"
+      layoutMode: "packery",
+      filter: function() {
+        return qsRegex ? $(this).text().match( qsRegex ) : true;
+      }
     });
 
     json.forEach(function (obj) {
@@ -19,5 +23,24 @@ $(document).ready(function () {
     });
   });
 
-  // setup search bar
+  // use value of search field to filter
+  var search = $('#search').keyup(debounce(function() {
+    qsRegex = new RegExp(search.val(), "gi");
+    grid.isotope();
+  }, 200 ));
+
+  // debounce so filtering doesn't happen every millisecond
+  function debounce(fn, threshold) {
+    var timeout;
+    return function debounced() {
+      if (timeout) {
+        clearTimeout(timeout);
+      }
+      function delayed() {
+        fn();
+        timeout = null;
+      }
+      timeout = setTimeout(delayed, threshold || 100);
+    }
+  }
 });
