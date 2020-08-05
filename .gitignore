@@ -3,3 +3,9 @@
 
 # Windows
 Thumbs.db
+
+# Vim
+*.swp
+
+# Python
+builder/__pycache__
