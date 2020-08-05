@@ -1,0 +1,25 @@
+name: compile yml files into info.json
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run a one-line script
+      run: python3 ./builder/jsonifier.py info src/misc/info.json
+    - name: add json file for commit
+      run: git add src/misc/info.json
+    - name: commit changed file
+      run: git commit -m ""
+    - name: fetch from master
+      run: git fetch origin master
+    - name: push code to master
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
