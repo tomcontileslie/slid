@@ -1,69 +1,65 @@
 [
   {
     "id": "1",
-    "colour": "blue",
+    "colour": "red",
     "brightness": "lighten-2",
-    "tags": [
-      "support",
-      "university"
-    ],
     "title": {
-      "colour": "teal-text",
+      "colour": "red-text",
       "brightness": "darken-5",
-      "text": "Out of Hours"
+      "text": "Samaritans"
     },
     "content": {
-      "colour": "teal-text",
+      "colour": "red-text",
       "brightness": "darken-4",
-      "text": "Urgent support after university office hours."
+      "text": "Some info about Samaritans here."
     },
-    "action": {
-      "colour": "teal-text",
+    "actions": {
+      "colour": "red-text",
       "brightness": "lighten-3",
       "urls": [
         {
-          "url": "tel:+441334476161",
-          "text": "(01334 47) 6161"
+          "url": "tel:116123",
+          "text": "116 123"
         },
         {
-          "url": "https://www.st-andrews.ac.uk/contacts/emergency/university/outofhours/",
-          "text": "More information"
+          "url": "https://samaritans.org",
+          "text": "Website"
         }
       ]
-    }
+    },
+    "tags": [
+      "depression",
+      "support",
+      "hotline"
+    ]
   },
   {
     "id": "2",
-    "colour": "blue",
+    "colour": "red",
     "brightness": "lighten-2",
-    "tags": [
-      "support",
-      "university",
-      "advice"
-    ],
     "title": {
-      "colour": "teal-text",
+      "colour": "red-text",
       "brightness": "darken-5",
       "text": "The ASC"
     },
     "content": {
-      "colour": "teal-text",
+      "colour": "red-text",
       "brightness": "darken-4",
-      "text": "Help and advice on a whole range of university topics."
+      "text": "The ASC, where you can ask anything."
     },
-    "action": {
-      "colour": "teal-text",
+    "actions": {
+      "colour": "red-text",
       "brightness": "lighten-3",
       "urls": [
         {
-          "url": "tel:+441334472266",
-          "text": "(01334 47) 2266"
-        },
-        {
-          "url": "https://www.st-andrews.ac.uk/administration/asc/",
-          "text": "More information"
+          "url": "tel:+441334362020",
+          "text": "(01334 46) 2020"
         }
       ]
-    }
+    },
+    "tags": [
+      "university",
+      "information"
+    ]
   }
 ]
