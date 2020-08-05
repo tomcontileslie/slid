@@ -1,10 +1,8 @@
-# lid
+# slid
 
-[![GitHub release](https://img.shields.io/github/release/Kezz101/lid.svg)](https://github.com/Kezz101/lid/releases/latest)
-[![GitHub Releases](https://img.shields.io/github/downloads/Kezz101/lid/latest/total.svg)](https://github.com/Kezz101/lid/releases)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![license](https://img.shields.io/github/license/Kezz101/lid.svg)](https://github.com/Kezz101/lid/blob/master/LICENSE)
+SLID - Super Lightweight Information Database
 
-LID - Lightweight Information Database
+Extension upon Kezz101's **lid** project, but with no in-browser editing.
 
-
+The goal of this project is to create a deployable one-page contact information database which has an easily
+editable database file, and has contact information well displayed.
