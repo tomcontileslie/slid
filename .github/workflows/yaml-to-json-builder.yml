@@ -18,6 +18,10 @@ jobs:
       run: python3 -m pip install pyyaml
     - name: Run a one-line script
       run: python3 ./builder/jsonifier.py info src/misc/info.json
+    - name: git config
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
     - name: add json file for commit
       run: git add src/misc/info.json
     - name: commit changed file
