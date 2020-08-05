@@ -10,13 +10,18 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@master
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+    - name: Install PyYAML dependency
+      run: python3 -m pip install pyyaml
     - name: Run a one-line script
       run: python3 ./builder/jsonifier.py info src/misc/info.json
     - name: add json file for commit
       run: git add src/misc/info.json
     - name: commit changed file
-      run: git commit -m ""
+      run: git commit -m "Auto update: info.json"
     - name: fetch from master
       run: git fetch origin master
     - name: push code to master
