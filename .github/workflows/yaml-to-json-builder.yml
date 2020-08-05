@@ -23,7 +23,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
     - name: add json file for commit
-      run: git add src/misc/info.json
+      run: git add -f src/misc/info.json
     - name: commit changed file
       run: git commit -m "Auto update info JSON file"
     - name: fetch from master

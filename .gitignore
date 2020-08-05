@@ -9,3 +9,7 @@ Thumbs.db
 
 # Python
 builder/__pycache__
+
+# SPICY: ignore this file but get GitHub workflow
+# to force push to it
+src/misc/info.json
