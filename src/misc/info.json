@@ -61,5 +61,46 @@
       "university",
       "information"
     ]
+  },
+  {
+    "id": "3",
+    "colour": "blue",
+    "brightness": "lighten-2",
+    "title": {
+      "colour": "blue-text",
+      "brightness": "darken-5",
+      "text": "Nightline"
+    },
+    "content": {
+      "colour": "blue-text",
+      "brightness": "darken-4",
+      "text": "Nightline is an out-of-hours anonymous, confidential, non-directive, non-judgmental and empathetic listening service. Nightline can be reached by phone, email, IM, or Skype audio on any night that halls are open."
+    },
+    "actions": {
+      "colour": "blue-text",
+      "brightness": "lighten-3",
+      "urls": [
+        {
+          "url": "tel:+441334462266",
+          "text": "(01334 46) 2266"
+        },
+        {
+          "url": "https://nline.im",
+          "text": "IM"
+        },
+        {
+          "url": "mailto:nightline@st-andrews.ac.uk",
+          "text": "Email"
+        },
+        {
+          "url": "https://st-andrews.ac.uk/nightline",
+          "text": "Website"
+        }
+      ]
+    },
+    "tags": [
+      "university",
+      "hotline"
+    ]
   }
 ]
