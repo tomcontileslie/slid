@@ -1,0 +1,20 @@
+- title: Samaritans
+  content: Some info about Samaritans here.
+  links:
+    - text: 116 123
+      url: tel:116123
+    - text: Website
+      url: https://samaritans.org
+  tags:
+    - depression
+    - support
+    - hotline
+
+- title: The ASC
+  content: The ASC, where you can ask anything.
+  links:
+    - text: (01334 46) 2020
+      url: tel:+441334362020
+  tags:
+    - university
+    - information
