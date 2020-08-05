@@ -1,0 +1,14 @@
+- title: Nightline
+  content: Nightline is an out-of-hours anonymous, confidential, non-directive, non-judgmental and empathetic listening service. Nightline can be reached by phone, email, IM, or Skype audio on any night that halls are open.
+  links:
+    - text: (01334 46) 2266
+      url: tel:+441334462266
+    - text: IM
+      url: https://nline.im
+    - text: Email
+      url: mailto:nightline@st-andrews.ac.uk
+    - text: Website
+      url: https://st-andrews.ac.uk/nightline
+  tags:
+    - university
+    - hotline
