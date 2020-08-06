@@ -50,14 +50,14 @@ for filename in os.listdir(source_dir):
                 # now retrieve from the yaml file.
                 if "title" in ck:
                     outdict["title"] = {"colour" : colour,
-                                        "brightness" : "darken-5",
+                                        "brightness" : "darken-4",
                                         "text" : card["title"]}
                     
                 else:
                     break
 
                 if "content" in ck:
-                    outdict["content"] = {"colour" : colour,
+                    outdict["content"] = {"colour" : "black",
                                           "brightness" : "darken-4",
                                           "text" : card["content"]}
                 else:
@@ -75,7 +75,7 @@ for filename in os.listdir(source_dir):
                                 listoflinks.append({"url" : link["url"],
                                                     "text" : link["text"]})
                         outdict["actions"] = {"colour" : colour,
-                                              "brightness" : "lighten-3",
+                                              "brightness" : "darken-4",
                                               "urls" : copy.deepcopy(listoflinks)}
                 else:
                     break
