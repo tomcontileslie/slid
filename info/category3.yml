@@ -1,0 +1,8 @@
+- title: A card from a third category
+  content: This card is from the category "category3". It is given a different colour automatically, but can have the same tags. You can't see the tags, but you can filter by them once we get that set up. We will also be able to filter by location, for example. I'm pretty sure you can also add line breaks and other HTML goodness to this card: <br> yep seems good.
+  links:
+    - text: Source code
+      url: https://github.com/tomcontileslie/slid
+  tags:
+    - help
+    - informatio 
