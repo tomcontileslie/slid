@@ -6,6 +6,7 @@
     display: inline-block;
     margin-left: 5px;
     margin-bottom: 5px;
+    max-width: 40%;
 }
 .input-field input[type=text]:focus + label {
     color: #90caf9;
