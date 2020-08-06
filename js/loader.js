@@ -9,7 +9,7 @@ $(document).ready(function () {
   $.getJSON("misc/info.json", function (json) {
     grid.empty();
 
-    grid.isotope({
+    var $grid = grid.isotope({
       itemSelector: ".card",
       layoutMode: "packery",
       filter: function() {
