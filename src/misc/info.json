@@ -4,17 +4,17 @@
     "colour": "red",
     "brightness": "lighten-2",
     "title": {
-      "colour": "red-text",
+      "colour": "red",
       "brightness": "darken-5",
       "text": "Samaritans"
     },
     "content": {
-      "colour": "red-text",
+      "colour": "red",
       "brightness": "darken-4",
       "text": "Some info about Samaritans here. Open outside of term time."
     },
     "actions": {
-      "colour": "red-text",
+      "colour": "red",
       "brightness": "lighten-3",
       "urls": [
         {
@@ -38,17 +38,17 @@
     "colour": "red",
     "brightness": "lighten-2",
     "title": {
-      "colour": "red-text",
+      "colour": "red",
       "brightness": "darken-5",
       "text": "The ASC"
     },
     "content": {
-      "colour": "red-text",
+      "colour": "red",
       "brightness": "darken-4",
       "text": "The ASC, where you can ask anything."
     },
     "actions": {
-      "colour": "red-text",
+      "colour": "red",
       "brightness": "lighten-3",
       "urls": [
         {
@@ -67,17 +67,17 @@
     "colour": "blue",
     "brightness": "lighten-2",
     "title": {
-      "colour": "blue-text",
+      "colour": "blue",
       "brightness": "darken-5",
       "text": "Nightline"
     },
     "content": {
-      "colour": "blue-text",
+      "colour": "blue",
       "brightness": "darken-4",
       "text": "Nightline is an out-of-hours anonymous, confidential, non-directive, non-judgmental and empathetic listening service. Nightline can be reached by phone, email, IM, or Skype audio on any night that halls are open."
     },
     "actions": {
-      "colour": "blue-text",
+      "colour": "blue",
       "brightness": "lighten-3",
       "urls": [
         {
