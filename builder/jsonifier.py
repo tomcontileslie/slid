@@ -80,7 +80,7 @@ for filename in os.listdir(source_dir):
 
                 if "image" in ck:
                     if isinstance(card["image"], str):
-                        outdict["image"] = "img/cards/" + card["image"]
+                        outdict["image"] = {"src" : "img/cards/" + card["image"]}
 
                 if "tags" in ck:
                     if not isinstance(card["tags"], list):
