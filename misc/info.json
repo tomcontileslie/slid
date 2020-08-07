@@ -11,7 +11,7 @@
     "content": {
       "colour": "black",
       "brightness": "darken-4",
-      "text": "SLID is a super lightweight fork of Kezz101's LID (Lightweight Information Database) under MIT license.\nThis project runs through GitHub and produces a single webpage, which you see rendered here, which acts as a database where each database entry is a card.\n"
+      "text": "SLID is a super lightweight fork of Kezz101's LID (Lightweight Information Database) under MIT license. <br>\nThis project runs through GitHub and produces a single webpage, which you see rendered here, which acts as a database where each database entry is a card.\n"
     },
     "actions": {
       "colour": "red",
@@ -41,7 +41,7 @@
     "content": {
       "colour": "black",
       "brightness": "darken-4",
-      "text": "A card must contain a title and some content. It can optionally contain an image and/or links.\nThe card style is from Materialize.css. Cards are arranged on the page by Isotope.js, and can be filtered and sorted using the search bar and buttons above.\n"
+      "text": "A card must contain a title and some content. It can optionally contain an image and/or links. <br>\nThe card style is from Materialize.css. Cards are arranged on the page by Isotope.js, and can be filtered and sorted using the search bar and buttons above.\n"
     },
     "tags": [
       "category1"
