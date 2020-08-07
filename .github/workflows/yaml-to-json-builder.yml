@@ -35,12 +35,14 @@ jobs:
         git add -f src/misc/info.json
         if git status | grep -q modified
         then
-          echo "::set-output name=filechanged::true"
+          echo "::set-output name=filechanged::yes"
         else
-          echo "::set-output name=filechanged::false"
+          echo "::set-output name=filechanged::no"
         fi
     - name: fetch from master
       run: git fetch origin master
+    - name: try something
+      run: echo "${{ steps.checkmodjson.outputs.filechanged }}"
 
 
   push-json:
