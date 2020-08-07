@@ -9,7 +9,7 @@
   {{/if}}
 
   <div class="card-content">
-    {{#unless image}}{{#if title}}{{#with title}}<span class="card-title {{colour}}-text {{#if brightness}}text-{{brightness}}{{/if}}">{{text}}</span>{{/with}}{{/if}}{{/unless}}
+    {{#unless image}}{{#if title}}{{#with title}}<span class="card-title {{colour}}-text {{#if brightness}}text-{{brightness}}{{/if}}">{{{text}}}</span>{{/with}}{{/if}}{{/unless}}
     {{#with content}}<p class="{{colour}}-text {{#if brightness}}text-{{brightness}}{{/if}}">{{text}}</p>{{/with}}
   </div>
 
