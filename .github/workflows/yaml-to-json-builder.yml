@@ -9,10 +9,11 @@ jobs:
   create-json:
     runs-on: macos-latest
     outputs:
-      filechanged: ${{ steps.commitifjson.outputs.filechanged }}
+      filechanged: ${{ steps.checkmodjson.outputs.filechanged }}
     steps:
 
-    - uses: actions/checkout@master
+    - name: checkout master branch
+      uses: actions/checkout@master
       with:
         persist-credentials: false
         fetch-depth: 0
@@ -28,13 +29,12 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
 
-    - name: Commit if info.JSON was modified
-      id: commitifjson
+    - name: Check if info.JSON was modified
+      id: checkmodjson
       run: |
         git add -f src/misc/info.json
         if git status | grep -q modified
         then
-          git commit -m "Auto update info JSON file"
           echo "::set-output name=filechanged::true"
         else
           echo "::set-output name=filechanged::false"
@@ -42,10 +42,40 @@ jobs:
     - name: fetch from master
       run: git fetch origin master
 
+
   push-json:
     runs-on: macos-latest
     needs: create-json
     steps:
+
+    - name: test print
+      run: echo ${{ needs.create-json.outputs.filechanged }}
+
+    - name: checkout master branch
+      uses: actions/checkout@master
+      with:
+        persist-credentials: false
+        fetch-depth: 0
+
+    - name: Install PyYAML dependency
+      run: python3 -m pip install pyyaml
+
+    - name: Build info.JSON file
+      run: python3 ./builder/jsonifier.py info src/misc/info.json
+
+    - name: Configure git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+
+    - name: Commit info.JSON
+      if: $${{ needs.create-json.outputs.filechanged }}
+      run: |
+        git add -f src/misc/info.json
+        git commit -m "Auto update info.JSON file"
+
+    - name: fetch from master
+      run: git fetch origin master
 
     - name: push code to master
       uses: ad-m/github-push-action@master
