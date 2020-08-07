@@ -5,6 +5,9 @@ $(document).ready(function () {
   var grid = $(".grid");
   var qsRegex;
 
+  // prepare dropdowns
+  $(".dropdown-trigger").dropdown();
+
   // load isotope
   $.getJSON("misc/info.json", function (json) {
     grid.empty();
