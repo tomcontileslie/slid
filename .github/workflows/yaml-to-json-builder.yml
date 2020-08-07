@@ -30,7 +30,6 @@ jobs:
 
     - name: Commit if info.JSON was modified
       id: commitifjson
-      run: git add -f src/misc/info.json
       run: |
         git add -f src/misc/info.json
         if git status | grep -q modified
