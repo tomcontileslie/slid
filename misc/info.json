@@ -71,7 +71,9 @@
         }
       ]
     },
-    "image": "img/cards/sunflower.jpg",
+    "image": {
+      "src": "img/cards/sunflower.jpg"
+    },
     "tags": [
       "category1"
     ]
