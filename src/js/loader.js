@@ -32,7 +32,7 @@ $(document).ready(function () {
 
   // Pressing shuffle button randomises sort order
   $(".shuffle-button").on('click', function() {
-    $grid.isotope({sortBy : "random" });
+    grid.isotope({sortBy : "random" });
   });
 
   // use value of search field to filter
