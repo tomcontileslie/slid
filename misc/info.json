@@ -6,31 +6,27 @@
     "title": {
       "colour": "red",
       "brightness": "darken-4",
-      "text": "Samaritans"
+      "text": "Welcome to SLID."
     },
     "content": {
       "colour": "black",
       "brightness": "darken-4",
-      "text": "Some info about Samaritans here. Open outside of term time."
+      "text": "SLID is a super lightweight fork of Kezz101's LID (Lightweight Information Database) under MIT license.\nThis project runs through GitHub and produces a single webpage, which you see rendered here, which acts as a database where each database entry is a card.\n"
     },
     "actions": {
       "colour": "red",
       "brightness": "darken-4",
       "urls": [
         {
-          "url": "tel:116123",
-          "text": "116 123"
-        },
-        {
-          "url": "https://samaritans.org",
-          "text": "Website"
+          "url": "https://github.com/tomcontileslie/slid",
+          "text": "GitHub Repository"
         }
       ]
     },
     "tags": [
-      "depression",
-      "support",
-      "hotline"
+      "category1",
+      "introduction",
+      "github"
     ]
   },
   {
@@ -40,96 +36,81 @@
     "title": {
       "colour": "red",
       "brightness": "darken-4",
-      "text": "The ASC"
+      "text": "This is a card."
     },
     "content": {
       "colour": "black",
       "brightness": "darken-4",
-      "text": "The ASC, where you can ask anything."
+      "text": "A card must contain a title and some content. It can optionally contain an image and/or links.\nThe card style is from Materialize.css. Cards are arranged on the page by Isotope.js, and can be filtered and sorted using the search bar and buttons above.\n"
+    },
+    "tags": [
+      "category1"
+    ]
+  },
+  {
+    "id": "3",
+    "colour": "red",
+    "brightness": "lighten-2",
+    "title": {
+      "colour": "red",
+      "brightness": "darken-4",
+      "text": "This card has an image."
+    },
+    "content": {
+      "colour": "black",
+      "brightness": "darken-4",
+      "text": "To add an image to a card, first add an image to the src/img/cards folder. I added one called sunflower.jpg. Then, in the entry corresponding to this card in its .yml file, add a line saying \"image: sunflower.jpg\".\n"
     },
     "actions": {
       "colour": "red",
       "brightness": "darken-4",
       "urls": [
         {
-          "url": "tel:+441334362020",
-          "text": "(01334 46) 2020"
+          "url": "https://unsplash.com/photos/5ydw9eqUGgU",
+          "text": "This image on Unsplash"
         }
       ]
     },
+    "image": "img/cards/sunflower.jpg",
     "tags": [
-      "university",
-      "information"
+      "category1"
     ]
   },
   {
-    "id": "3",
+    "id": "4",
     "colour": "blue",
     "brightness": "lighten-2",
     "title": {
       "colour": "blue",
       "brightness": "darken-4",
-      "text": "Nightline"
+      "text": "This is another card."
     },
     "content": {
       "colour": "black",
       "brightness": "darken-4",
-      "text": "Nightline is an out-of-hours anonymous, confidential, non-directive, non-judgmental and empathetic listening service. Nightline can be reached by phone, email, IM, or Skype audio on any night that halls are open."
-    },
-    "actions": {
-      "colour": "blue",
-      "brightness": "darken-4",
-      "urls": [
-        {
-          "url": "tel:+441334462266",
-          "text": "(01334 46) 2266"
-        },
-        {
-          "url": "https://nline.im",
-          "text": "IM"
-        },
-        {
-          "url": "mailto:nightline@st-andrews.ac.uk",
-          "text": "Email"
-        },
-        {
-          "url": "https://st-andrews.ac.uk/nightline",
-          "text": "Website"
-        }
-      ]
+      "text": "Notice is has a different colour; that's because it's from a different category. You can filter by category in the navbar above. The cards belonging to each category are stored in separate .yml files, one per category, in the info/ folder of the repository. All the information stored on the card corresponds to a single bullet point in the relevant .yml file. Under that bullet point, you can specify the card's title, content, links, tags, and image.\n"
     },
     "tags": [
-      "university",
-      "hotline"
+      "category2",
+      "categories"
     ]
   },
   {
-    "id": "4",
+    "id": "5",
     "colour": "amber",
     "brightness": "lighten-2",
     "title": {
       "colour": "amber",
       "brightness": "darken-4",
-      "text": "A card from a third category"
+      "text": "This is a card from a third category."
     },
     "content": {
       "colour": "black",
       "brightness": "darken-4",
-      "text": "This card is from the category \"category3\". It is given a different colour automatically, but can have the same tags. You can't see the tags, but you can filter by them once we get that set up. We will also be able to filter by location, for example. I'm pretty sure you can also add line breaks and other HTML goodness to this card: <br> yep seems good.\n"
-    },
-    "actions": {
-      "colour": "amber",
-      "brightness": "darken-4",
-      "urls": [
-        {
-          "url": "https://github.com/tomcontileslie/slid",
-          "text": "Source code"
-        }
-      ]
+      "text": "That means its content is stored in a different .yml file to all the cards before. Say you want to create a new category, called \"beans\". All you need to do is add a \"beans.yml\" file to the info/ folder, and specify the colour you want that category to have in the file builder/style.py. When you make those changes to the GitHub repository, all the other changes happen automagically!\n"
     },
     "tags": [
-      "help",
-      "informatio"
+      "category3"
     ]
   }
 ]
