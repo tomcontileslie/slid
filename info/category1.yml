@@ -1,5 +1,7 @@
 - title: Welcome to SLID.
-  content: SLID is a super lightweight fork of Kezz101's LID (Lightweight Information Database) under MIT license. This project runs through GitHub and produces a single webpage, which you see rendered here, which acts as a database where each database entry is a card.
+  content: |
+    SLID is a super lightweight fork of Kezz101's LID (Lightweight Information Database) under MIT license.
+    This project runs through GitHub and produces a single webpage, which you see rendered here, which acts as a database where each database entry is a card.
   links:
     - text: GitHub Repository
       url: https://github.com/tomcontileslie/slid
@@ -8,11 +10,14 @@
     - github
 
 - title: This is a card.
-  content: A card must contain a title and some content. It can optionally contain an image and/or links. The card style is from Materialize.css. Cards are arranged on the page by Isotope.js, and can be filtered and sorted using the search bar and buttons above.
+  content: |
+    A card must contain a title and some content. It can optionally contain an image and/or links.
+    The card style is from Materialize.css. Cards are arranged on the page by Isotope.js, and can be filtered and sorted using the search bar and buttons above.
 
 - title: This card has an image.
   image: sunflower.jpg
-  content: To add an image to a card, first add an image to the src/img/cards folder. I added one called sunflower.jpg. Then, in the entry corresponding to this card in its .yml file, add a line saying "image: sunflower.jpg".
+  content: |
+    To add an image to a card, first add an image to the src/img/cards folder. I added one called sunflower.jpg. Then, in the entry corresponding to this card in its .yml file, add a line saying "image: sunflower.jpg".
   links:
     - text: This image on Unsplash
       url: https://unsplash.com/photos/5ydw9eqUGgU
