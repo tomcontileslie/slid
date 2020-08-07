@@ -77,20 +77,22 @@ for filename in os.listdir(source_dir):
                         outdict["actions"] = {"colour" : colour,
                                               "brightness" : "darken-4",
                                               "urls" : copy.deepcopy(listoflinks)}
-                else:
-                    break
+
+                if "image" in ck:
+                    if isinstance(card["image"]):
+                        outdict["image"] = "img/cards/" + card["image"]
 
                 if "tags" in ck:
                     if not isinstance(card["tags"], list):
                         break
                     else:
-                        listoftags = []
+                        listoftags = [tag] # initialise with category name
                         for kw in card["tags"]:
                             if isinstance(kw, str):
                                 listoftags.append(kw)
                         outdict["tags"] = copy.deepcopy(listoftags)
                 else:
-                    break
+                    outdict["tags"] = [tag]
 
                 out.append(copy.deepcopy(outdict))
 

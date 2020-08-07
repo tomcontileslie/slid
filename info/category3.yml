@@ -1,9 +1,2 @@
-- title: A card from a third category
-  content: |
-    This card is from the category "category3". It is given a different colour automatically, but can have the same tags. You can't see the tags, but you can filter by them once we get that set up. We will also be able to filter by location, for example. I'm pretty sure you can also add line breaks and other HTML goodness to this card: <br> yep seems good.
-  links:
-    - text: Source code
-      url: https://github.com/tomcontileslie/slid
-  tags:
-    - help
-    - informatio 
+- title: This is a card from a third category.
+  content: That means its content is stored in a different .yml file to all the cards before. Say you want to create a new category, called "beans". All you need to do is add a "beans.yml" file to the info/ folder, and specify the colour you want that category to have in the file builder/style.py. When you make those changes to the GitHub repository, all the other changes happen automagically!

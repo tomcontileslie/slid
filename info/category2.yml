@@ -1,14 +1,4 @@
-- title: Nightline
-  content: Nightline is an out-of-hours anonymous, confidential, non-directive, non-judgmental and empathetic listening service. Nightline can be reached by phone, email, IM, or Skype audio on any night that halls are open.
-  links:
-    - text: (01334 46) 2266
-      url: tel:+441334462266
-    - text: IM
-      url: https://nline.im
-    - text: Email
-      url: mailto:nightline@st-andrews.ac.uk
-    - text: Website
-      url: https://st-andrews.ac.uk/nightline
+- title: This is another card.
+  content: Notice is has a different colour; that's because it's from a different category. You can filter by category in the navbar above. The cards belonging to each category are stored in separate .yml files, one per category, in the info/ folder of the repository. All the information stored on the card corresponds to a single bullet point in the relevant .yml file. Under that bullet point, you can specify the card's title, content, links, tags, and image.
   tags:
-    - university
-    - hotline
+    - categories
