@@ -43,6 +43,10 @@ jobs:
       run: git fetch origin master
     - name: try something
       run: echo "${{ steps.checkmodjson.outputs.filechanged }}"
+    - name: try something else
+      if:
+        steps.checkmodjson.outputs.filechanged == 'yes'
+      run: echo "this ran despite it being false"
 
 
   push-json:
