@@ -79,7 +79,7 @@ for filename in os.listdir(source_dir):
                                               "urls" : copy.deepcopy(listoflinks)}
 
                 if "image" in ck:
-                    if isinstance(card["image"]):
+                    if isinstance(card["image"], str):
                         outdict["image"] = "img/cards/" + card["image"]
 
                 if "tags" in ck:
