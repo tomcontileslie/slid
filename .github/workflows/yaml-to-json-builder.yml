@@ -46,6 +46,7 @@ jobs:
   push-json:
     runs-on: macos-latest
     needs: create-json
+    if: $${{ needs.create-json.outputs.filechanged }} == 'true'
     steps:
 
     - name: test print
@@ -69,7 +70,6 @@ jobs:
         git config --local user.name "GitHub Action"
 
     - name: Commit info.JSON
-      if: $${{ needs.create-json.outputs.filechanged }}
       run: |
         git add -f src/misc/info.json
         git commit -m "Auto update info.JSON file"
@@ -79,6 +79,5 @@ jobs:
 
     - name: push code to master
       uses: ad-m/github-push-action@master
-      if: $${{ needs.create-json.outputs.filechanged }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
