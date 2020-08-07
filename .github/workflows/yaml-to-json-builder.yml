@@ -6,7 +6,7 @@ on:
 
 jobs:
 
-  create-json:
+  commit-json:
     runs-on: macos-latest
     outputs:
       filechanged: ${{ steps.checkmodjson.outputs.filechanged }}
@@ -39,51 +39,18 @@ jobs:
         else
           echo "::set-output name=filechanged::no"
         fi
-    - name: fetch from master
+
+    - name: Fetch project from master branch
       run: git fetch origin master
-    - name: try something
-      run: echo "${{ steps.checkmodjson.outputs.filechanged }}"
-    - name: try something else
+
+    - name: Commit changes to info.JSON
       if:
         steps.checkmodjson.outputs.filechanged == 'yes'
-      run: echo "this ran despite it being false"
+      run: git commit -m "Auto update info.json file"
 
-
-  push-json:
-    runs-on: macos-latest
-    needs: create-json
-    if: $${{ needs.create-json.outputs.filechanged }} == 'true'
-    steps:
-
-    - name: test print
-      run: echo ${{ needs.create-json.outputs.filechanged }}
-
-    - name: checkout master branch
-      uses: actions/checkout@master
-      with:
-        persist-credentials: false
-        fetch-depth: 0
-
-    - name: Install PyYAML dependency
-      run: python3 -m pip install pyyaml
-
-    - name: Build info.JSON file
-      run: python3 ./builder/jsonifier.py info src/misc/info.json
-
-    - name: Configure git
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-
-    - name: Commit info.JSON
-      run: |
-        git add -f src/misc/info.json
-        git commit -m "Auto update info.JSON file"
-
-    - name: fetch from master
-      run: git fetch origin master
-
-    - name: push code to master
+    - name: Push changes to master branch
+      if:
+        steps.checkmodjson.outputs.filechanged == 'yes'
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
