@@ -1,4 +1,4 @@
-name: compile yml files into info.json
+name: Build JavaScript files
 on:
   push:
     branches:
@@ -6,17 +6,17 @@ on:
 
 jobs:
 
-  commit-json:
+  build-js:
     runs-on: macos-latest
-    outputs:
-      filechanged: ${{ steps.checkmodjson.outputs.filechanged }}
     steps:
 
-    - name: checkout master branch
+    - name: Checkout master branch
       uses: actions/checkout@master
       with:
         persist-credentials: false
         fetch-depth: 0
+
+      # First use Python to build the info.json file
 
     - name: Install PyYAML dependency
       run: python3 -m pip install pyyaml
@@ -24,15 +24,26 @@ jobs:
     - name: Build info.JSON file
       run: python3 ./builder/jsonifier.py info src/misc/info.json
 
+      # Now use handlebars (via npm) to precompile the card template
+
+    - name: Install Handlebars
+      run: npm install -g handlebars
+
+    - name: Precompile card template
+      run: handlebars src/misc/card.hbs -e "hbs" -f src/js/card-compiled.js
+
+      # Set up git and check if any files were changed
+
     - name: Configure git
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
 
-    - name: Check if info.JSON was modified
-      id: checkmodjson
+    - name: Check if files were modified
+      id: checkmod
       run: |
         git add -f src/misc/info.json
+        git add -f src/js/card-compiled.js
         if git status | grep -q modified
         then
           echo "::set-output name=filechanged::yes"
@@ -43,14 +54,14 @@ jobs:
     - name: Fetch project from master branch
       run: git fetch origin master
 
-    - name: Commit changes to info.JSON
+    - name: Commit changes to js files
       if:
-        steps.checkmodjson.outputs.filechanged == 'yes'
-      run: git commit -m "Auto update info.json file"
+        steps.checkmod.outputs.filechanged == 'yes'
+      run: git commit -m "Auto update JavaScript files"
 
     - name: Push changes to master branch
       if:
-        steps.checkmodjson.outputs.filechanged == 'yes'
+        steps.checkmod.outputs.filechanged == 'yes'
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
