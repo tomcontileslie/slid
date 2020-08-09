@@ -20,11 +20,18 @@ $(document).ready(function () {
 
   // isotope: filter cards, intersect filters with different groups
   $(".slid-filter").on('click', function() {
+
+    // retrieve what group we are filtering, and the filter value
     var filterValue = $(this).attr('filter');
     var filterGroup = $(this).attr('slid-group');
+
+    // update filters dictionary, concatenate values for each group
     filters[filterGroup] = filterValue;
     var isotopeFilters = concatValues(filters);
     grid.isotope({filter : isotopeFilters});
+
+    // uncheck other filters in the group and check the new one
+    $(".active", ".slid-" + filterGroup + "-dropdown").removeClass('active');
     $(this).parent().addClass('active');
   });
 
