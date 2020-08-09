@@ -24,7 +24,7 @@
       ]
     },
     "tags": [
-      "category1",
+      "cat-category1",
       "introduction",
       "github"
     ]
@@ -44,7 +44,7 @@
       "text": "A card must contain a title and some content. It can optionally contain an image and/or links. <br>\nThe card style is from Materialize.css. Cards are arranged on the page by Isotope.js, and can be filtered and sorted using the search bar and buttons above.\n"
     },
     "tags": [
-      "category1"
+      "cat-category1"
     ]
   },
   {
@@ -75,7 +75,7 @@
       "src": "img/cards/sunflower.jpg"
     },
     "tags": [
-      "category1"
+      "cat-category1"
     ]
   },
   {
@@ -93,7 +93,7 @@
       "text": "Notice is has a different colour; that's because it's from a different category. You can filter by category in the navbar above. The cards belonging to each category are stored in separate .yml files, one per category, in the info/ folder of the repository. All the information stored on the card corresponds to a single bullet point in the relevant .yml file. Under that bullet point, you can specify the card's title, content, links, tags, and image.\n"
     },
     "tags": [
-      "category2",
+      "cat-category2",
       "categories"
     ]
   },
@@ -112,7 +112,7 @@
       "text": "That means its content is stored in a different .yml file to all the cards before. Say you want to create a new category, called \"beans\". All you need to do is add a \"beans.yml\" file to the info/ folder, and specify the colour you want that category to have in the file builder/style.py. When you make those changes to the GitHub repository, all the other changes happen automagically!\n"
     },
     "tags": [
-      "category3"
+      "cat-category3"
     ]
   }
 ]
