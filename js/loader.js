@@ -6,7 +6,7 @@ $(document).ready(function () {
   var qsRegex;
 
   // prepare dropdowns
-  $(".dropdown-trigger").dropdown();
+  $('.dropdown-trigger').dropdown({ coverTrigger : false });
 
   // load isotope
   $.getJSON("misc/info.json", function (json) {
