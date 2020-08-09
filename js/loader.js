@@ -18,10 +18,10 @@ $(document).ready(function () {
     return value;
   }
 
-  // isotope: filter cards, intersect filters with different types
+  // isotope: filter cards, intersect filters with different groups
   $(".slid-filter").on('click', function() {
     var filterValue = $(this).attr('filter');
-    var filterType = $(this).attr('slid-group');
+    var filterGroup = $(this).attr('slid-group');
     filters[filterGroup] = filterValue;
     var isotopeFilters = concatValues(filters);
     grid.isotope({filter : isotopeFilters});
