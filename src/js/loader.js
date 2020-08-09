@@ -8,6 +8,27 @@ $(document).ready(function () {
   // prepare dropdowns
   $('.dropdown-trigger').dropdown({ coverTrigger : false });
 
+  // prepare isotope filtering with dict and custom filtering function
+  var filters = {};
+  function concatValues( obj ) {
+    var value = '';
+    for ( var prop in obj ) {
+      value += obj[ prop ];
+    }
+    return value;
+  }
+
+  // isotope: filter cards, intersect filters with different types
+  $(".slid-filter").on('click', function() {
+    var filterValue = $(this).attr('filter');
+    var filterType = $(this).attr('slid-group');
+    filters[filterGroup] = filterValue;
+    var isotopeFilters = concatValues(filters);
+    grid.isotope({filter : isotopeFilters});
+    $(this).parent().addClass('active');
+  });
+
+
   // load isotope
   $.getJSON("misc/info.json", function (json) {
     grid.empty();

@@ -86,13 +86,13 @@ for filename in os.listdir(source_dir):
                     if not isinstance(card["tags"], list):
                         break
                     else:
-                        listoftags = [tag] # initialise with category name
+                        listoftags = ["cat-" + tag] # initialise with category name
                         for kw in card["tags"]:
                             if isinstance(kw, str):
                                 listoftags.append(kw)
                         outdict["tags"] = copy.deepcopy(listoftags)
                 else:
-                    outdict["tags"] = [tag]
+                    outdict["tags"] = ["cat-" + tag]
 
                 out.append(copy.deepcopy(outdict))
 
