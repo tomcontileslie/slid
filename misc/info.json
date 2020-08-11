@@ -59,20 +59,24 @@
     "content": {
       "colour": "black",
       "brightness": "darken-4",
-      "text": "To add an image to a card, first add an image to the src/img/cards folder. I added one called sunflower.jpg. Then, in the entry corresponding to this card in its .yml file, add a line saying \"image: sunflower.jpg\".\n"
+      "text": "To add an image to a card, first add an image to the src/img/cards folder. I added one called sunset.jpg. Then, in the entry corresponding to this card in its .yml file, add a line saying \"image: sunset.jpg\".\n"
     },
     "actions": {
       "colour": "red",
       "brightness": "darken-4",
       "urls": [
         {
-          "url": "https://unsplash.com/photos/5ydw9eqUGgU",
+          "url": "https://unsplash.com/photos/9YQGFzg0RiM",
           "text": "This image on Unsplash"
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Los_Angeles",
+          "text": "Los Angeles"
         }
       ]
     },
     "image": {
-      "src": "img/cards/sunflower.jpg"
+      "src": "img/cards/sunset.jpg"
     },
     "tags": [
       "cat-category1"
