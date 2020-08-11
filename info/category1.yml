@@ -15,9 +15,11 @@
     The card style is from Materialize.css. Cards are arranged on the page by Isotope.js, and can be filtered and sorted using the search bar and buttons above.
 
 - title: This card has an image.
-  image: sunflower.jpg
+  image: sunset.jpg
   content: |
-    To add an image to a card, first add an image to the src/img/cards folder. I added one called sunflower.jpg. Then, in the entry corresponding to this card in its .yml file, add a line saying "image: sunflower.jpg".
+    To add an image to a card, first add an image to the src/img/cards folder. I added one called sunset.jpg. Then, in the entry corresponding to this card in its .yml file, add a line saying "image: sunset.jpg".
   links:
     - text: This image on Unsplash
-      url: https://unsplash.com/photos/5ydw9eqUGgU
+      url: https://unsplash.com/photos/9YQGFzg0RiM
+    - text: Los Angeles
+      url: https://en.wikipedia.org/wiki/Los_Angeles
