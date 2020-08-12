@@ -47,6 +47,9 @@ for filename in os.listdir(source_dir):
                 else:
                     break
 
+                # add a category entry with filename
+                outdict["category"] = tag
+
                 # now retrieve from the yaml file.
                 if "title" in ck:
                     outdict["title"] = {"colour" : colour,
@@ -86,13 +89,11 @@ for filename in os.listdir(source_dir):
                     if not isinstance(card["locations"], list):
                         break
                     else:
-                        listoftags = ["geo-" + tag] # initialise with category name
+                        listoftags = []
                         for kw in card["locations"]:
                             if isinstance(kw, str):
                                 listoftags.append(kw)
                         outdict["tags"] = copy.deepcopy(listoftags)
-                else:
-                    outdict["locations"] = ["geo-" + tag]
 
                 out.append(copy.deepcopy(outdict))
 
