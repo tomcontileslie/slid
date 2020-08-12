@@ -5,9 +5,11 @@
   links:
     - text: GitHub Repository
       url: https://github.com/tomcontileslie/slid
-  tags:
-    - introduction
-    - github
+  locations:
+    - World
+    - EU
+    - USA
+    - UK
 
 - title: This is a card.
   content: |

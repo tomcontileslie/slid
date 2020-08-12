@@ -82,17 +82,17 @@ for filename in os.listdir(source_dir):
                     if isinstance(card["image"], str):
                         outdict["image"] = {"src" : "img/cards/" + card["image"]}
 
-                if "tags" in ck:
-                    if not isinstance(card["tags"], list):
+                if "locations" in ck:
+                    if not isinstance(card["locations"], list):
                         break
                     else:
-                        listoftags = ["cat-" + tag] # initialise with category name
-                        for kw in card["tags"]:
+                        listoftags = ["geo-" + tag] # initialise with category name
+                        for kw in card["locations"]:
                             if isinstance(kw, str):
                                 listoftags.append(kw)
                         outdict["tags"] = copy.deepcopy(listoftags)
                 else:
-                    outdict["tags"] = ["cat-" + tag]
+                    outdict["locations"] = ["geo-" + tag]
 
                 out.append(copy.deepcopy(outdict))
 
