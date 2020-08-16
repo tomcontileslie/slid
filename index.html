@@ -18,18 +18,15 @@
   </script>
   <script crossorigin="anonymous" integrity="sha384-ZOED+d9HxogEQwD+jFvux96iGQR9TxfJO+mPF2ZS0TuKH6eWrmvPsDpO6I0OWdiX" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
   </script>
-  <script src="js/card-compiled.js">
-  </script>
   <script src="js/loader.js">
   </script>
   <!-- MISC !-->
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-   <base target="_blank"/>
-   <title>
-    lid
-   </title>
-  </meta>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <base target="_blank"/>
+  <title>
+   lid
+  </title>
  </head>
  <body>
   <ul class="dropdown-content slid-cat-dropdown" id="dropdown-cat">
@@ -39,18 +36,27 @@
     </a>
    </li>
    <li>
-    <a class="slid-filter" filter=".cat-category1" slid-group="cat">
-     Category1
+    <a class="slid-filter" filter=".cat-anothercategory" slid-group="cat">
+     <i class="material-icons left amber-text text-lighten-1">
+      brightness_1
+     </i>
+     Another Category
     </a>
    </li>
    <li>
-    <a class="slid-filter" filter=".cat-category2" slid-group="cat">
-     Category2
+    <a class="slid-filter" filter=".cat-intro" slid-group="cat">
+     <i class="material-icons left red-text text-lighten-1">
+      brightness_1
+     </i>
+     Intro
     </a>
    </li>
    <li>
-    <a class="slid-filter" filter=".cat-category3" slid-group="cat">
-     Category3
+    <a class="slid-filter" filter=".cat-morecards" slid-group="cat">
+     <i class="material-icons left blue-text text-lighten-1">
+      brightness_1
+     </i>
+     More Cards
     </a>
    </li>
   </ul>
@@ -61,8 +67,8 @@
     </a>
    </li>
    <li>
-    <a class="slid-filter" filter=".geo-world" slid-group="geo">
-     World
+    <a class="slid-filter" filter=".geo-eu" slid-group="geo">
+     EU
     </a>
    </li>
    <li>
@@ -71,8 +77,13 @@
     </a>
    </li>
    <li>
-    <a class="slid-filter" filter=".geo-eu" slid-group="geo">
-     EU
+    <a class="slid-filter" filter=".geo-usa" slid-group="geo">
+     USA
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".geo-world" slid-group="geo">
+     World
     </a>
    </li>
   </ul>
@@ -115,13 +126,24 @@
    </nav>
   </div>
   <div class="grid">
-   <div class="card red lighten-2 cat-category1 geo-world geo-eu geo-usa geo-uk" data-name="Welcome to SLID.">
+   <div class="card amber lighten-2 cat-anothercategory" data-name="This is a card from a third category.">
+    <div class="card-content">
+     <span class="card-title amber-text text-darken-4">
+      This is a card from a third category.
+     </span>
+     <p class="black-text text-darken-4">
+      That means its content is stored in a different .yml file to all the cards before. Say you want to create a new category, called "beans". All you need to do is add a "beans.yml" file to the info/ folder, and specify the colour you want that category to have in the file builder/style.py. When you make those changes to the GitHub repository, all the other changes happen automagically!
+      <br/>
+     </p>
+    </div>
+   </div>
+   <div class="card red lighten-2 cat-intro geo-world geo-eu geo-usa geo-uk" data-name="Welcome to SLID.">
     <div class="card-content">
      <span class="card-title red-text text-darken-4">
       Welcome to SLID.
      </span>
      <p class="black-text text-darken-4">
-      SLID is a super lightweight fork of Kezz101's LID (Lightweight Information Database) under MIT license. &lt;br&gt;
+      SLID is a super lightweight fork of Kezz101's LID (Lightweight Information Database) under MIT license.
       <br/>
       This project runs through GitHub and produces a single webpage, which you see rendered here, which acts as a database where each database entry is a card.
       <br/>
@@ -135,20 +157,20 @@
      </a>
     </div>
    </div>
-   <div class="card red lighten-2 cat-category1" data-name="This is a card.">
+   <div class="card red lighten-2 cat-intro" data-name="This is a card.">
     <div class="card-content">
      <span class="card-title red-text text-darken-4">
       This is a card.
      </span>
      <p class="black-text text-darken-4">
-      A card must contain a title and some content. It can optionally contain an image and/or links. &lt;br&gt;
+      A card must contain a title and some content. It can optionally contain an image and/or links.
       <br/>
       The card style is from Materialize.css. Cards are arranged on the page by Isotope.js, and can be filtered and sorted using the search bar and buttons above.
       <br/>
      </p>
     </div>
    </div>
-   <div class="card red lighten-2 cat-category1" data-name="This card has an image.">
+   <div class="card red lighten-2 cat-intro" data-name="This card has an image.">
     <div class="card-image">
      <img src="img/cards/sunset.jpg"/>
      <span class="card-title red-text text-darken-4">
@@ -174,24 +196,13 @@
      </a>
     </div>
    </div>
-   <div class="card blue lighten-2 cat-category2 geo-uk" data-name="This is another card.">
+   <div class="card blue lighten-2 cat-morecards geo-uk" data-name="This is another card.">
     <div class="card-content">
      <span class="card-title blue-text text-darken-4">
       This is another card.
      </span>
      <p class="black-text text-darken-4">
       Notice is has a different colour; that's because it's from a different category. You can filter by category in the navbar above. The cards belonging to each category are stored in separate .yml files, one per category, in the info/ folder of the repository. All the information stored on the card corresponds to a single bullet point in the relevant .yml file. Under that bullet point, you can specify the card's title, content, links, tags, and image.
-      <br/>
-     </p>
-    </div>
-   </div>
-   <div class="card amber lighten-2 cat-category3" data-name="This is a card from a third category.">
-    <div class="card-content">
-     <span class="card-title amber-text text-darken-4">
-      This is a card from a third category.
-     </span>
-     <p class="black-text text-darken-4">
-      That means its content is stored in a different .yml file to all the cards before. Say you want to create a new category, called "beans". All you need to do is add a "beans.yml" file to the info/ folder, and specify the colour you want that category to have in the file builder/style.py. When you make those changes to the GitHub repository, all the other changes happen automagically!
       <br/>
      </p>
     </div>
