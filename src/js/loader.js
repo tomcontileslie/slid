@@ -37,28 +37,16 @@ $(document).ready(function () {
 
 
   // load isotope
-  $.getJSON("misc/info.json", function (json) {
-    grid.empty();
-
-    var $grid = grid.isotope({
-      itemSelector: ".card",
-      layoutMode: "packery",
-      filter: function() {
-        return qsRegex ? $(this).text().match( qsRegex ) : true;
-      },
-      getSortData: {
-        name: "[data-name]"
-      },
-      sortBy: "name"
-    });
-
-    json.forEach(function (obj) {
-      var data = $(Handlebars.templates.card(obj));
-      grid.append(data).isotope("appended", data).isotope("updateSortData").isotope();
-      grid.imagesLoaded().progress(function() {
-        grid.isotope("updateSortData").isotope();
-      });
-    });
+  var $grid = grid.isotope({
+    itemSelector: ".card",
+    layoutMode: "packery",
+    filter: function() {
+      return qsRegex ? $(this).text().match( qsRegex ) : true;
+    },
+    getSortData: {
+      name: "[data-name]"
+    },
+    sortBy: "name"
   });
 
   // Pressing shuffle button randomises sort order

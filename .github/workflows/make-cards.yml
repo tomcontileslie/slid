@@ -1,4 +1,4 @@
-name: Build JavaScript files
+name: Make Cards
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
 
 jobs:
 
-  build-js:
+  make-cards:
     runs-on: macos-latest
     steps:
 
@@ -21,16 +21,11 @@ jobs:
     - name: Install PyYAML dependency
       run: python3 -m pip install pyyaml
 
-    - name: Build info.JSON file
-      run: python3 ./builder/jsonifier.py info src/misc/info.json
+    - name: Install BeautifulSoup
+      run: python3 -m pip install beautifulsoup4
 
-      # Now use handlebars (via npm) to precompile the card template
-
-    - name: Install Handlebars
-      run: npm install -g handlebars
-
-    - name: Precompile card template
-      run: handlebars src/misc/card.hbs -e "hbs" -f src/js/card-compiled.js
+    - name: Make cards
+      run: python3 ./builder/jsonifier.py info/ src/index.html
 
       # Set up git and check if any files were changed
 
@@ -42,8 +37,7 @@ jobs:
     - name: Check if files were modified
       id: checkmod
       run: |
-        git add -f src/misc/info.json
-        git add -f src/js/card-compiled.js
+        git add -f src/misc/index.html
         if git status | grep -q modified
         then
           echo "::set-output name=filechanged::yes"
@@ -54,10 +48,10 @@ jobs:
     - name: Fetch project from master branch
       run: git fetch origin master
 
-    - name: Commit changes to js files
+    - name: Commit changes to index.html
       if:
         steps.checkmod.outputs.filechanged == 'yes'
-      run: git commit -m "Auto update JavaScript files"
+      run: git commit -m "Auto update index.html"
 
     - name: Push changes to master branch
       if:
