@@ -37,7 +37,7 @@ jobs:
     - name: Check if files were modified
       id: checkmod
       run: |
-        git add -f src/misc/index.html
+        git add -f src/index.html
         if git status | grep -q modified
         then
           echo "::set-output name=filechanged::yes"
