@@ -1,106 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- STYLES !-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha384-5KZdSYqynSzIjQGS2M1O3HW6HVDBjfNx0v5Y2eQuE3vvQ9NTiiPK9/GWc0yYCrgw" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- SCRIPTS !-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.3.0/handlebars.runtime.min.js" integrity="sha384-8Ywd7Kw0DfS394YC4Tt8V0Dq4va0DH5RIoc20vQ6uHzTxeCjmkMdeLUhFXOgXNG4" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha256-+WFRRTv1uGEhn6sykgWJyTBYDE8cQn8uAj50Kefp9II=" crossorigin="anonymous"></script>
-    <script src="https://cdn.rawgit.com/metafizzy/isotope-packery/47d49b98112f9fdf44ebf3b04ede19cbfe956f95/packery-mode.pkgd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha384-ZOED+d9HxogEQwD+jFvux96iGQR9TxfJO+mPF2ZS0TuKH6eWrmvPsDpO6I0OWdiX" crossorigin="anonymous"></script>
-
-    <script src="js/card-compiled.js"></script>
-    <script src="js/loader.js"></script>
-
-    <!-- MISC !-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <base target="_blank">
-
-    <title>lid</title>
-  </head>
-  <body>
-
-    <ul id="dropdown-cat" class="dropdown-content slid-cat-dropdown">
-      <li class="active"><a class="slid-filter" filter="" slid-group="cat">All</a></li>
-      <li><a class="slid-filter" filter=".cat-category1" slid-group="cat">Category1</a></li>
-      <li><a class="slid-filter" filter=".cat-category2" slid-group="cat">Category2</a></li>
-      <li><a class="slid-filter" filter=".cat-category3" slid-group="cat">Category3</a></li>
-    </ul>
-
-    <ul id="dropdown-geo" class="dropdown-content slid-geo-dropdown">
-      <li class="active"><a class="slid-filter" filter="" slid-group="geo">All</a></li>
-      <li><a class="slid-filter" filter=".geo-world" slid-group="geo">World</a></li>
-      <li><a class="slid-filter" filter=".geo-uk" slid-group="geo">UK</a></li>
-      <li><a class="slid-filter" filter=".geo-eu" slid-group="geo">EU</a></li>
-    </ul>
-
-
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav nav-wrapper valign-wrapper blue darken-4">
-          <div class="input-field">
-            <i class="material-icons prefix">search</i>
-            <input type="text" id="search" autocomplete="off" placeholder="Search">
-          </div>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a class="shuffle-button">Shuffle cards<i class="material-icons right">shuffle</i></a></li>
-            <li><a class="dropdown-trigger" data-target="dropdown-cat">Filter by category<i class="material-icons right">filter_list</i></a></li>
-            <li><a class="dropdown-trigger" data-target="dropdown-geo">Filter by location<i class="material-icons right">filter_list</i></a></li>
-          </ul>
-        </div>
-      </nav>
+ <head>
+  <!-- STYLES !-->
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha384-5KZdSYqynSzIjQGS2M1O3HW6HVDBjfNx0v5Y2eQuE3vvQ9NTiiPK9/GWc0yYCrgw" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="css/style.css" rel="stylesheet"/>
+  <!-- SCRIPTS !-->
+  <script crossorigin="anonymous" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-8Ywd7Kw0DfS394YC4Tt8V0Dq4va0DH5RIoc20vQ6uHzTxeCjmkMdeLUhFXOgXNG4" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.3.0/handlebars.runtime.min.js">
+  </script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha256-+WFRRTv1uGEhn6sykgWJyTBYDE8cQn8uAj50Kefp9II=" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js">
+  </script>
+  <script src="https://cdn.rawgit.com/metafizzy/isotope-packery/47d49b98112f9fdf44ebf3b04ede19cbfe956f95/packery-mode.pkgd.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-ZOED+d9HxogEQwD+jFvux96iGQR9TxfJO+mPF2ZS0TuKH6eWrmvPsDpO6I0OWdiX" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+  </script>
+  <script src="js/loader.js">
+  </script>
+  <!-- MISC !-->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <base target="_blank"/>
+  <title>
+   lid
+  </title>
+ </head>
+ <body>
+  <ul class="dropdown-content slid-cat-dropdown" id="dropdown-cat">
+   <li class="active">
+    <a class="slid-filter" filter="" slid-group="cat">
+     All
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".cat-anothercategory" slid-group="cat">
+     <i class="material-icons left amber-text text-lighten-1">
+      brightness_1
+     </i>
+     Another Category
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".cat-intro" slid-group="cat">
+     <i class="material-icons left red-text text-lighten-1">
+      brightness_1
+     </i>
+     Intro
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".cat-morecards" slid-group="cat">
+     <i class="material-icons left blue-text text-lighten-1">
+      brightness_1
+     </i>
+     More Cards
+    </a>
+   </li>
+  </ul>
+  <ul class="dropdown-content slid-geo-dropdown" id="dropdown-geo">
+   <li class="active">
+    <a class="slid-filter" filter="" slid-group="geo">
+     All
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".geo-eu" slid-group="geo">
+     EU
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".geo-uk" slid-group="geo">
+     UK
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".geo-usa" slid-group="geo">
+     USA
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".geo-world" slid-group="geo">
+     World
+    </a>
+   </li>
+  </ul>
+  <div class="navbar-fixed">
+   <nav>
+    <div class="nav nav-wrapper valign-wrapper blue darken-4">
+     <div class="input-field">
+      <i class="material-icons prefix">
+       search
+      </i>
+      <input autocomplete="off" id="search" placeholder="Search" type="text"/>
+     </div>
+     <ul class="right hide-on-med-and-down" id="nav-mobile">
+      <li>
+       <a class="shuffle-button">
+        Shuffle cards
+        <i class="material-icons right">
+         shuffle
+        </i>
+       </a>
+      </li>
+      <li>
+       <a class="dropdown-trigger" data-target="dropdown-cat">
+        Filter by category
+        <i class="material-icons right">
+         filter_list
+        </i>
+       </a>
+      </li>
+      <li>
+       <a class="dropdown-trigger" data-target="dropdown-geo">
+        Filter by location
+        <i class="material-icons right">
+         filter_list
+        </i>
+       </a>
+      </li>
+     </ul>
     </div>
-
-    <div class="grid">
-      <div class="valign-wrapper">
-        <div class="preloader-wrapper big active">
-          <div class="spinner-layer spinner-blue">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-            <div class="circle"></div>
-          </div><div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-          </div>
-
-          <div class="spinner-layer spinner-red">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-            <div class="circle"></div>
-          </div><div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-          </div>
-
-          <div class="spinner-layer spinner-yellow">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-            <div class="circle"></div>
-          </div><div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-          </div>
-
-          <div class="spinner-layer spinner-green">
-            <div class="circle-clipper left">
-              <div class="circle"></div>
-            </div><div class="gap-patch">
-            <div class="circle"></div>
-          </div><div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-          </div>
-        </div>
+   </nav>
+  </div>
+  <div class="grid">
+   <div class="card amber lighten-2 cat-anothercategory" data-name="This is a card from a third category.">
+    <div class="card-content">
+     <span class="card-title amber-text text-darken-4">
+      This is a card from a third category.
+     </span>
+     <p class="black-text text-darken-4">
+      That means its content is stored in a different .yml file to all the cards before. Say you want to create a new category, called "beans". All you need to do is add a "beans.yml" file to the info/ folder, and specify the colour you want that category to have in the file builder/style.py. When you make those changes to the GitHub repository, all the other changes happen automagically!
+      <br/>
+     </p>
     </div>
-  </body>
+   </div>
+   <div class="card red lighten-2 cat-intro geo-world geo-eu geo-usa geo-uk" data-name="Welcome to SLID.">
+    <div class="card-content">
+     <span class="card-title red-text text-darken-4">
+      Welcome to SLID.
+     </span>
+     <p class="black-text text-darken-4">
+      SLID is a super lightweight fork of Kezz101's LID (Lightweight Information Database) under MIT license.
+      <br/>
+      This project runs through GitHub and produces a single webpage, which you see rendered here, which acts as a database where each database entry is a card.
+      <br/>
+     </p>
+    </div>
+    <div class="card-action">
+     <a href="https://github.com/tomcontileslie/slid">
+      <span class="red-text text-darken-4">
+       GitHub Repository
+      </span>
+     </a>
+    </div>
+   </div>
+   <div class="card red lighten-2 cat-intro" data-name="This is a card.">
+    <div class="card-content">
+     <span class="card-title red-text text-darken-4">
+      This is a card.
+     </span>
+     <p class="black-text text-darken-4">
+      A card must contain a title and some content. It can optionally contain an image and/or links.
+      <br/>
+      The card style is from Materialize.css. Cards are arranged on the page by Isotope.js, and can be filtered and sorted using the search bar and buttons above.
+      <br/>
+     </p>
+    </div>
+   </div>
+   <div class="card red lighten-2 cat-intro" data-name="This card has an image.">
+    <div class="card-image">
+     <img src="img/cards/sunset.jpg"/>
+     <span class="card-title red-text text-darken-4">
+      This card has an image.
+     </span>
+    </div>
+    <div class="card-content">
+     <p class="black-text text-darken-4">
+      To add an image to a card, first add an image to the src/img/cards folder. I added one called sunset.jpg. Then, in the entry corresponding to this card in its .yml file, add a line saying "image: sunset.jpg".
+      <br/>
+     </p>
+    </div>
+    <div class="card-action">
+     <a href="https://unsplash.com/photos/9YQGFzg0RiM">
+      <span class="red-text text-darken-4">
+       This image on Unsplash
+      </span>
+     </a>
+     <a href="https://en.wikipedia.org/wiki/Los_Angeles">
+      <span class="red-text text-darken-4">
+       Los Angeles
+      </span>
+     </a>
+    </div>
+   </div>
+   <div class="card blue lighten-2 cat-morecards geo-uk" data-name="This is another card.">
+    <div class="card-content">
+     <span class="card-title blue-text text-darken-4">
+      This is another card.
+     </span>
+     <p class="black-text text-darken-4">
+      Notice is has a different colour; that's because it's from a different category. You can filter by category in the navbar above. The cards belonging to each category are stored in separate .yml files, one per category, in the info/ folder of the repository. All the information stored on the card corresponds to a single bullet point in the relevant .yml file. Under that bullet point, you can specify the card's title, content, links, tags, and image.
+      <br/>
+     </p>
+    </div>
+   </div>
+  </div>
+ </body>
 </html>
