@@ -142,6 +142,7 @@ make sure that you:
 - Have surrounded both the category name and colour name in quotes,
 - Have added a comma at the end of the line,
 - Have used a colour from the list at the top of the file,
+- Have entered the category name so that it is identical to the filename, but with no `.yml` at the end;
 - Have inserted your new line after the opening curly bracket, and before the closing one.
 
 ### 4. Activate GitHub Pages hosting
