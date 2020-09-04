@@ -7,6 +7,10 @@ $(document).ready(function () {
 
   // prepare dropdowns
   $('.dropdown-trigger').dropdown({ coverTrigger : false });
+  // prepare sidenav for mobile
+  $('.sidenav').sidenav();
+  // collapsibles
+  // $('.collapsible').collapsible();
 
   // prepare isotope filtering with dict and custom filtering function
   var filters = {};
