@@ -10,6 +10,7 @@ $(document).ready(function () {
 
   // prepare isotope filtering with dict and custom filtering function
   var filters = {};
+  var isotopeFilters;
   function concatValues( obj ) {
     var value = '';
     for ( var prop in obj ) {
@@ -27,8 +28,9 @@ $(document).ready(function () {
 
     // update filters dictionary, concatenate values for each group
     filters[filterGroup] = filterValue;
-    var isotopeFilters = concatValues(filters);
-    grid.isotope({filter : isotopeFilters});
+    isotopeFilters = concatValues(filters);
+
+    grid.isotope();
 
     // uncheck other filters in the group and check the new one
     $(".active", ".slid-" + filterGroup + "-dropdown").removeClass('active');
@@ -41,7 +43,10 @@ $(document).ready(function () {
     itemSelector: ".card",
     layoutMode: "packery",
     filter: function() {
-      return qsRegex ? $(this).text().match( qsRegex ) : true;
+      // var $this = $(this);
+      var searchResult = qsRegex ? $(this).text().match( qsRegex ) : true;
+      var buttonResult = isotopeFilters ? $(this).is( isotopeFilters ) : true;
+      return searchResult && buttonResult;
     },
     getSortData: {
       name: "[data-name]"
