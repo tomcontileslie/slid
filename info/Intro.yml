@@ -1,6 +1,6 @@
 - title: 1. Welcome to SLID.
   content: |
-    SLID is a super lightweight fork of Kezz101's LID (Lightweight Information Database), under MIT license.
+    SLID is a super lightweight fork of Kezz101's LID (Lightweight Information Database) under MIT license.
     This project runs through GitHub and produces a single webpage, which you see rendered here, which acts as a database where each database entry is a card.
   links:
     - text: GitHub Repository
