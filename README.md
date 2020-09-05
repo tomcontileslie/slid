@@ -6,9 +6,14 @@ Unlike **lid**, this version does not allow users to log onto the website to add
 instead, your personal project is meant to be hosted here on GitHub via [GitHub Pages](https://pages.github.com/).
 Any changes you make to the information on GitHub, designed to be easy to edit, is mirrored in a matter of minutes on your website.
 
+## Contents
+
 [What is **slid**?](#what-is-slid)
+
 [How does **slid** work?](#how-does-slid-work)
+
 [How do I use **slid**?](#how-do-i-use-slid) (includes full setup instructions)
+
 [FAQ](#faq)
 
 ## What is **slid**?
