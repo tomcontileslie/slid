@@ -50,6 +50,8 @@ The first step is to make a GitHub account and use it to
 This will create your personal copy of this project which you are then free to edit so that it contains information relevant
 to your specific service.
 
+**Before forking the repo, consider reading Section 4 which may give recommendations about what to name your fork.**
+
 ### 2. Edit the information files
 *This step can be repeated at any point, when you wish to update, add, or remove information from your copy of **slid***.
 
@@ -147,7 +149,90 @@ make sure that you:
 
 ### 4. Activate GitHub Pages hosting
 
-INFORMATION TO BE ADDED HERE
+Once you have created the content for your website, you are ready to put it online and make it accessible to all.
+GitHub offers a website hosting service called [GitHub Pages](https://pages.github.com/) which this repository
+is set up to use. While GitHub Pages will do the hosting, you will need to decide on your service's domain name.
+Depending on what domain name is available to you, you should read a different sub-section.
+We will assume throughout that:
+
+- Your Nightline (or other organisation) is called *Your Nightline* (replace that with your actual name)
+- Your Nightline(or other organisation)'s GitHub username is "*@yournightline*".
+
+Now choose one of the following options:
+
+1. Your Nightline has its own website which we will refer to as `https://yournightline.com`,
+and you wish your information database to be at a subdomain which we will refer to as
+`https://info.yournightline.com`.
+In this case, refer to section 4a. Note that you must know how to edit your domain's **DNS records**
+to carry this out.
+2. Your Nightline does not have its own website, or in any case wishes the website to appear at
+`https://yournightline.github.io/info`. In this case, refer to section 4b. You will be able to
+customise the `info` part of the link to anything you prefer.
+3. Your Nightline wishes the website to appear at `https://yournightline.github.io`. In this case, read
+the guidance in section 4b and then read what you must do differently in 4c.
+
+#### 4a. Custom domain
+
+Follow the steps below to have your copy of **slid** appear on your own website's subdomain.
+We will assume that your fork of **slid** is also called **slid**, though you can replace every
+reference to **slid** with your alternate name below if you prefer.
+
+What will effectively happen by carrying out these steps is that you will store your website's
+content on your personal GitHub Pages domain: `https://yournightline.github.io/slid`. Then,
+you will tell your website to point its subdomain to your GitHub Pages domain to retrieve the
+content to display on the page.
+This sounds like a redirect,
+[but is not the same thing](https://totaluptime.com/kb/whats-the-difference-between-a-cname-and-a-web-redirect/).
+
+We'll assume you're setting up the subdomain `info.yournightline.com`, but you can change `info` to whatever
+else you want.
+
+1. **Create a new subdomain with your web hosting provider and update your DNS records.**
+On your web hosting provider's control panel, set up a new subdomain called `info.yournightline.com`.
+You can also create the corresponding `www` domain, `www.info.yournightline.com`, but this is not compulsory.
+Next, update your DNS records. For `info.nightline.com`, add a CNAME record with the text
+`yournightline.github.io`. Do the same for the `www` domain if you have one.
+2. **Change the CNAME file in slid**. Update the `src/CNAME` file in your fork of **slid** to contain
+the address: `info.nightline.com` (don't write `http://` or anything at the start; this holds for the DNS records too).
+3. **Activate GitHub Pages hosting**. In your fork of **slid**, go into Settings, and then go to the GitHub Pages section.
+As a **Source**, pick the `gh-pages` branch (this branch is automatically updated by GitHub to contain only the contents
+of the `src/` folder - so that there aren't any python or YAML files kicking about).
+Don't select a theme. Then, enter `info.yournightline.com` as your **Custom domain**.
+You can check **Enforce HTTPS**, though whether this works is dependent on your web hosting plan has an SSL
+certificate set up.
+
+That should do it! To have all the changes go through, it may be necessary to edit one of the info cards in its
+`.yml` file to trigger a full update, which doesn't always happen automatically.
+
+#### 4b. GitHub page hosting
+
+In this section we will assume you want your database to be visible at `https://yournightline.github.io/info`.
+You can choose a name other than `info` by replacing all instances of `info` with your preferred name.
+
+1. **Fork the repository**. When you fork the **slid** repository, make sure to name it `info` rather than `slid`.
+2. **Delete the CNAME record**. In the `src/` folder, there is a `CNAME` file - only helpful if you are putting the
+info database on your own website. Delete it.
+3. **Activate GitHub Pages hosting**. In your fork of **slid**, go into Settings, and then go to the GitHub Pages section.
+As a **Source**, pick the `gh-pages` branch (this branch is automatically updated by GitHub to contain only the contents
+of the `src/` folder - so that there aren't any python or YAML files kicking about).
+Don't select a theme.
+
+At this point, your website should be live at the address mentioned above!
+To have all the changes go through, it may be necessary to edit one of the info cards in its
+`.yml` file to trigger a full update, which doesn't always happen automatically.
+
+#### 4c. GitHub Pages main website
+
+In this section we will assume you want your database to be visible at `https://yournightline.github.io/`, rather
+than a subpage like in the previous section.
+
+To do this, follow all the instructions of 4b, but make sure to name your **slid** fork as
+`yournightline.github.io`. This will tell GitHub Pages you want **slid** to be your main website homepage,
+rather than a subdirectory homepage.
+
+At this point, your website should be live at the address mentioned above!
+To have all the changes go through, it may be necessary to edit one of the info cards in its
+`.yml` file to trigger a full update, which doesn't always happen automatically.
 
 # FAQ
 
