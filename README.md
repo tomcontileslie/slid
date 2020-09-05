@@ -6,6 +6,11 @@ Unlike **lid**, this version does not allow users to log onto the website to add
 instead, your personal project is meant to be hosted here on GitHub via [GitHub Pages](https://pages.github.com/).
 Any changes you make to the information on GitHub, designed to be easy to edit, is mirrored in a matter of minutes on your website.
 
+[What is **slid**?](#what-is-slid)
+[How does **slid** work?](#how-does-slid-work)
+[How do I use **slid**?](#how-do-i-use-slid) (includes full setup instructions)
+[FAQ](#faq)
+
 ## What is **slid**?
 
 **slid** was developed as [St Andrews Nightline](https://st-andrews.ac.uk/nightline)'s information database,
@@ -50,7 +55,7 @@ The first step is to make a GitHub account and use it to
 This will create your personal copy of this project which you are then free to edit so that it contains information relevant
 to your specific service.
 
-**Before forking the repo, consider reading Section 4 which may give recommendations about what to name your fork.**
+**Before forking the repo, consider reading [section 4](#4-activate-github-pages-hosting) which may give recommendations about what to name your fork.**
 
 ### 2. Edit the information files
 *This step can be repeated at any point, when you wish to update, add, or remove information from your copy of **slid***.
@@ -163,13 +168,13 @@ Now choose one of the following options:
 1. Your Nightline has its own website which we will refer to as `https://yournightline.com`,
 and you wish your information database to be at a subdomain which we will refer to as
 `https://info.yournightline.com`.
-In this case, refer to section 4a. Note that you must know how to edit your domain's **DNS records**
+In this case, refer to [section 4a](#4a-custom-domain). Note that you must know how to edit your domain's **DNS records**
 to carry this out.
 2. Your Nightline does not have its own website, or in any case wishes the website to appear at
-`https://yournightline.github.io/info`. In this case, refer to section 4b. You will be able to
+`https://yournightline.github.io/info`. In this case, refer to [section 4b](#4b-github-page-hosting). You will be able to
 customise the `info` part of the link to anything you prefer.
 3. Your Nightline wishes the website to appear at `https://yournightline.github.io`. In this case, read
-the guidance in section 4b and then read what you must do differently in 4c.
+the guidance in [section 4b](#4b-github-page-hosting) and then read what you must do differently in [section 4c](#4c-github-pages-main-website).
 
 #### 4a. Custom domain
 
