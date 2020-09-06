@@ -171,7 +171,7 @@ Depending on what domain name is available to you, you should read a different s
 We will assume throughout that:
 
 - Your Nightline (or other organisation) is called *Your Nightline* (replace that with your actual name)
-- Your Nightline(or other organisation)'s GitHub username is "*@yournightline*".
+- Your Nightline (or other organisation)'s GitHub username is "*@yournightline*".
 
 Now choose one of the following options:
 
