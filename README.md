@@ -216,9 +216,6 @@ Don't select a theme. Then, enter `info.yournightline.com` as your **Custom doma
 You can check **Enforce HTTPS**, though whether this works is dependent on your web hosting plan has an SSL
 certificate set up.
 
-That should do it! To have all the changes go through, it may be necessary to edit one of the info cards in its
-`.yml` file to trigger a full update, which doesn't always happen automatically.
-
 #### 4b. GitHub page hosting
 
 In this section we will assume you want your database to be visible at `https://yournightline.github.io/info`.
@@ -233,8 +230,6 @@ of the `src/` folder - so that there aren't any python or YAML files kicking abo
 Don't select a theme.
 
 At this point, your website should be live at the address mentioned above!
-To have all the changes go through, it may be necessary to edit one of the info cards in its
-`.yml` file to trigger a full update, which doesn't always happen automatically.
 
 #### 4c. GitHub Pages main website
 
@@ -246,8 +241,6 @@ To do this, follow all the instructions of 4b, but make sure to name your **slid
 rather than a subdirectory homepage.
 
 At this point, your website should be live at the address mentioned above!
-To have all the changes go through, it may be necessary to edit one of the info cards in its
-`.yml` file to trigger a full update, which doesn't always happen automatically.
 
 # FAQ
 
