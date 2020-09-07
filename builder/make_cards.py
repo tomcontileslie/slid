@@ -160,7 +160,9 @@ def dict_to_html(card, category, colour):
     if links:
         out += "\n\n" + INDENT
         out += "<div class=\"card-action\">"
+        count = 0
         for link in links:
+            count += 1
             out += "\n" + 2 * INDENT
             out += "<a href=\"" + link[0] + "\">"
             out += "\n" + 3 * INDENT
@@ -169,6 +171,8 @@ def dict_to_html(card, category, colour):
             out += "</span>"
             out += "\n" + 2 * INDENT
             out += "</a>"
+            if count < len(links):
+                out += "<br>"
         out += "\n" + INDENT
         out += "</div>"
     
