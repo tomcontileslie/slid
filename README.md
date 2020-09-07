@@ -51,8 +51,9 @@ The `.github/` folder contains instructions telling GitHub to run the card-makin
 
 ## How do I use **slid**?
 
-**slid** is free to use. If you re-distribute parts of the code, please include the original MIT license (see the [LICENSE](LICENSE) file).
-This is not necessary if you are simply using **slid** to create your own information database, which is what will be explained here.
+**slid** is free to use. If you re-distribute the raw code, please include the original MIT license (see the [LICENSE](LICENSE) file).
+You should not delete the [LICENSE](LICENSE) from your fork of this project. However, it is not necessary to display the license on
+your website pages if it is built using **slid**.
 
 ### 1. Fork this repository
 The first step is to make a GitHub account and use it to
