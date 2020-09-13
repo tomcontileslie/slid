@@ -53,14 +53,6 @@ jobs:
         steps.checkmod.outputs.filechanged == 'yes'
       run: git commit -m "Auto update index.html"
 
-    - name: Push changes to master branch
-      if:
-        steps.checkmod.outputs.filechanged == 'yes'
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: master
-
     - name: Update GitHub Pages branch
       run: |
         git subtree split --prefix src -b gh-pages
