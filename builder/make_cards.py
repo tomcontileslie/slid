@@ -188,6 +188,8 @@ def dict_to_html(card, category, colour):
             out += loc
             out += "\n" + 2 * INDENT
             out += "</div>"
+        out += "\n" + INDENT
+        out += "</div>"
     
     out += "\n"
     out += "</div>"
