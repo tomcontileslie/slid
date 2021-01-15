@@ -31,10 +31,62 @@
  <body>
   <!-- PRE-DEFINE CONTENT OF DROPDOWNS !-->
   <ul class="dropdown-content slid-cat-dropdown" id="dropdown-cat">
-    Category dropdown to appear here.
+   <li class="active">
+    <a class="slid-filter" filter="" slid-group="cat">
+     All
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".cat-anothercategory" slid-group="cat">
+     <i class="material-icons left orange-text text-lighten-1">
+      brightness_1
+     </i>
+     Another Category
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".cat-intro" slid-group="cat">
+     <i class="material-icons left red-text text-lighten-1">
+      brightness_1
+     </i>
+     Intro
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".cat-morecards" slid-group="cat">
+     <i class="material-icons left blue-text text-lighten-1">
+      brightness_1
+     </i>
+     More Cards
+    </a>
+   </li>
   </ul>
   <ul class="dropdown-content slid-geo-dropdown" id="dropdown-geo">
-    Location dropdown to appear here.
+   <li class="active">
+    <a class="slid-filter" filter="" slid-group="geo">
+     All
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".geo-eu" slid-group="geo">
+     EU
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".geo-uk" slid-group="geo">
+     UK
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".geo-usa" slid-group="geo">
+     USA
+    </a>
+   </li>
+   <li>
+    <a class="slid-filter" filter=".geo-world" slid-group="geo">
+     World
+    </a>
+   </li>
   </ul>
   <!-- PREPARE SIDENAV FOR MOBILE !-->
   <ul class="sidenav collapsible" id="mobile-demo">
@@ -117,7 +169,107 @@
   </div>
   <!-- CARDS FOR SLID. AUTO-UPDATED BY make-cards.py !-->
   <div class="grid">
-    Cards appear here.
+   <div class="card orange lighten-2 cat-anothercategory" data-name="4. This is a card from a third category.">
+    <div class="card-content">
+     <span class="card-title orange-text text-darken-4">
+      4. This is a card from a third category.
+     </span>
+     <p class="black-text text-darken-4">
+      That means its content is stored in a different .yml file to all the cards before. Say you want to create a new category, called "beans". All you need to do is add a beans.yml file to the info/ folder, and specify the colour you want that category to have in the file builder/style.py. When you make those changes to the GitHub repository, all the other changes happen automagically!
+      <br/>
+     </p>
+    </div>
+   </div>
+   <div class="card red lighten-2 cat-intro geo-world geo-eu geo-usa geo-uk" data-name="1. Welcome to SLID.">
+    <div class="card-content">
+     <span class="card-title red-text text-darken-4">
+      1. Welcome to SLID.
+     </span>
+     <p class="black-text text-darken-4">
+      SLID is a super lightweight fork of Kezz101's LID (Lightweight Information Database) under MIT license.
+      <br/>
+      This project runs through GitHub and produces a single webpage, which you see rendered here, which acts as a database where each database entry is a card.
+      <br/>
+     </p>
+    </div>
+    <div class="card-action">
+     <a href="https://github.com/tomcontileslie/slid">
+      <span class="red-text text-darken-4">
+       GitHub Repository
+      </span>
+     </a>
+    </div>
+    <div class="beans">
+     <div class="bean red darken-4 red-text text-lighten-3">
+      World
+     </div>
+     <div class="bean red darken-4 red-text text-lighten-3">
+      EU
+     </div>
+     <div class="bean red darken-4 red-text text-lighten-3">
+      USA
+     </div>
+     <div class="bean red darken-4 red-text text-lighten-3">
+      UK
+     </div>
+    </div>
+   </div>
+   <div class="card red lighten-2 cat-intro" data-name="2. This is a card.">
+    <div class="card-content">
+     <span class="card-title red-text text-darken-4">
+      2. This is a card.
+     </span>
+     <p class="black-text text-darken-4">
+      A card must contain a title and some content. It can optionally contain an image and/or links.
+      <br/>
+      The card style is from Materialize.css. Cards are arranged on the page by Isotope.js, and can be filtered and sorted using the search bar and buttons above.
+      <br/>
+     </p>
+    </div>
+   </div>
+   <div class="card red lighten-2 cat-intro" data-name="5. This card has an image.">
+    <div class="card-image">
+     <img src="img/cards/sunset.jpg"/>
+     <span class="card-title red-text text-darken-4">
+      5. This card has an image.
+     </span>
+    </div>
+    <div class="card-content">
+     <p class="black-text text-darken-4">
+      To add an image to a card, first add an image to the src/img/cards folder. I added one called sunset.jpg. Then, in the entry corresponding to this card in its .yml file, add a line saying "image: sunset.jpg".
+      <br/>
+     </p>
+    </div>
+    <div class="card-action">
+     <a href="https://unsplash.com/photos/9YQGFzg0RiM">
+      <span class="red-text text-darken-4">
+       This image on Unsplash
+      </span>
+     </a>
+     <br/>
+     <a href="https://en.wikipedia.org/wiki/Los_Angeles">
+      <span class="red-text text-darken-4">
+       Los Angeles
+      </span>
+     </a>
+    </div>
+   </div>
+   <div class="card blue lighten-2 cat-morecards geo-uk" data-name="3. This is another card.">
+    <div class="card-content">
+     <span class="card-title blue-text text-darken-4">
+      3. This is another card.
+     </span>
+     <p class="black-text text-darken-4">
+      Notice is has a different colour; that's because it's from a different category. You can filter by category in the navbar above. The cards belonging to each category are stored in separate .yml files, one per category, in the info/ folder of the repository. All the information stored on the card corresponds to a single bullet point in the relevant .yml file. Under that bullet point, you can specify the card's title, content, links, tags, and image.
+      <br/>
+     </p>
+    </div>
+    <div class="beans">
+     <div class="bean blue darken-4 blue-text text-lighten-3">
+      UK
+     </div>
+    </div>
+   </div>
   </div>
  </body>
 </html>
