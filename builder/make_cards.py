@@ -5,7 +5,7 @@ import os
 
 SOURCE, OUTPUT = sys.argv[1], sys.argv[2]
 
-with open(os.path.join(SOURCE, "_colours.yml") as file:
+with open(os.path.join(SOURCE, "_colours.yml"), "r") as file:
     colours = yaml.load(file, Loader=yaml.FullLoader)
 
 
