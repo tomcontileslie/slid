@@ -148,6 +148,8 @@ Just like `links`, the `locations:` characteristic is supplied in the form of a 
 When building the webpage, **slid** will create a drop-down location filter
 which will contain all the locations you have entered in your information files.
 
+If you want some help formatting your YML files correctly, check out [tomcontileslie.com/tools/slidtool.html](https://tomcontileslie.com/tools/slidtool.html).
+
 ### 3. Edit the style file
 Every time you add or rename a `.yml` file in the `info/` folder, you have to update the `info/_colours.yml`
 file to let **slid** know what colour each file should be displayed as.
